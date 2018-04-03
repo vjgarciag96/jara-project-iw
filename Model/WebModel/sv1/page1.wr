@@ -1,0 +1,51 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="100" gr:y="80" id="sv1#page1" name="Page 1">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#page1#enu2" name="Form2" entity="User" linkOrder="sv1#page1#enu2#ln2">
+      <Link id="sv1#page1#enu2#ln2" name="Flow2" to="sv1#lgu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu2#ln2#par1" name="username_Username" source="sv1#page1#enu2#fld3" target="sv1#lgu1.username"/>
+        <LinkParameter id="sv1#page1#enu2#ln2#par2" name="password_Password" source="sv1#page1#enu2#fld4" target="sv1#lgu1.password"/>
+      </Link>
+      <Field id="sv1#page1#enu2#fld3" name="username" type="string" modifiable="true"/>
+      <Field id="sv1#page1#enu2#fld4" name="password" type="string" modifiable="true"/>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="5" gr:y="115" id="sv1#page1#mssu1" name="Error"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu2">
+          <layout:Link link="sv1#page1#enu2#ln2"/>
+          <layout:Field field="sv1#page1#enu2#fld3"/>
+          <layout:Field field="sv1#page1#enu2#fld4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#mssu1"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

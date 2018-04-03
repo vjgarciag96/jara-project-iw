@@ -1,15 +1,15 @@
 <DataModel xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="20" gr:y="158" gr:hideAttributes="false" attributeOrder="userOID userName password email">
+  <Entity id="User" name="User" duration="persistent" gr:x="30" gr:y="40" gr:hideAttributes="false" attributeOrder="userOID userName password email">
     <Attribute name="oid" id="userOID" type="integer" key="true"/>
     <Attribute name="userName" id="userName" type="string"/>
     <Attribute name="password" id="password" type="password"/>
     <Attribute name="email" id="email" type="string"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="178" gr:hideAttributes="false" attributeOrder="groupOID groupName">
+  <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="45" gr:hideAttributes="false" attributeOrder="groupOID groupName">
     <Attribute name="oid" id="groupOID" type="integer" key="true"/>
     <Attribute name="groupName" id="groupName" type="string"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="472" gr:y="167" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
+  <Entity id="Module" name="Module" duration="persistent" gr:x="475" gr:y="40" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
     <Attribute name="oid" id="moduleOID" type="integer" key="true"/>
     <Attribute name="moduleID" id="moduleID" type="string"/>
     <Attribute name="moduleName" id="moduleName" type="string"/>
@@ -30,12 +30,6 @@
     <RelationshipRole1 id="Group2Module" name="modules" maxCard="N"/>
     <RelationshipRole2 id="Module2Group" name="groups" maxCard="N"/>
   </Relationship>
-  <Entity gr:x="10" gr:y="325" id="ent1" name="Patient" duration="persistent">
-    <Attribute id="ent1#att1" key="true" name="oid" type="integer"/>
-  </Entity>
-  <Entity gr:x="195" gr:y="325" id="ent2" name="Staff" duration="persistent">
-    <Attribute id="ent2#att2" key="true" name="oid" type="integer"/>
-  </Entity>
   <Entity gr:x="730" gr:y="210" id="ent3" name="Departament" duration="persistent">
     <Attribute id="ent3#att3" key="true" name="oid" type="integer"/>
   </Entity>
@@ -47,5 +41,11 @@
   </Entity>
   <Entity gr:x="675" gr:y="340" id="ent6" name="Entity6" duration="persistent">
     <Attribute id="ent6#att6" key="true" name="oid" type="integer"/>
+  </Entity>
+  <Entity gr:x="15" gr:y="295" id="ent8" name="Staff Info" duration="persistent">
+    <Attribute id="ent8#att8" key="true" name="oid" type="integer"/>
+  </Entity>
+  <Entity gr:x="170" gr:y="295" id="ent9" name="Patient info" duration="persistent">
+    <Attribute id="ent9#att9" key="true" name="oid" type="integer"/>
   </Entity>
 </DataModel>
