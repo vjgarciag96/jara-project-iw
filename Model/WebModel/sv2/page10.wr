@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-95" gr:y="395" id="sv2#page10" name="New Patient" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="480" gr:y="15" id="sv2#page10" name="New Patient" landmark="true">
   <ContentUnits>
     <EntryUnit id="sv2#page10#enu7" name="UserForm" gr:x="0" gr:y="115" entity="User" linkOrder="sv2#page10#enu7#ln22">
       <Field id="sv2#page10#enu7#fld22" name="oid" type="integer" modifiable="false" hidden="true"/>
@@ -25,7 +25,7 @@
         <AttributesCondition id="sv2#page10#seu6#su9#acond2" name="group" predicate="eq" booleanOperator="or" implied="false" attributes="User#att26" value="2"/>
       </Selector>
     </SelectorUnit>
-    <MultiMessageUnit gr:x="270" gr:y="210" id="sv2#page10#mssu7" name="Create Patient"/>
+    <MultiMessageUnit gr:x="270" gr:y="185" id="sv2#page10#mssu7" name="Create Patient"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>

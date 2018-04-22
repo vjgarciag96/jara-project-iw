@@ -1,11 +1,13 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="-55" gr:y="90" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att6 User#att26" db:database="db1" db:table="user">
+  <Entity id="User" name="User" duration="persistent" gr:x="-55" gr:y="90" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att6 User#att26 User#att31 User#att32" db:database="db1" db:table="user">
     <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="userName" id="userName" type="string" db:column="username"/>
     <Attribute name="password" id="password" type="password" db:column="password"/>
     <Attribute name="email" id="email" type="string" db:column="email"/>
     <Attribute id="User#att6" name="group" type="string" derivationQuery="simpleImported::Self.User2DefaultGroup.groupName"/>
     <Attribute id="User#att26" name="groupOid" type="integer" derivationQuery="simpleImported::Self.User2DefaultGroup.groupOID"/>
+    <Attribute id="User#att31" name="staffName" type="string" derivationQuery="simpleImported::Self.rel2#role3.userName"/>
+    <Attribute id="User#att32" name="staffOid" type="integer" derivationQuery="simpleImported::Self.rel2#role3.userOID"/>
   </Entity>
   <Entity id="Group" name="Group" duration="persistent" gr:x="255" gr:y="40" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
     <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
@@ -149,11 +151,13 @@
       <db:JoinColumn attribute="ent5#att5" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="-205" gr:y="530" id="ent2" name="History" duration="persistent" attributeOrder="ent2#att22 ent2#att23 ent2#att24 ent2#att25" db:database="db1" db:table="history">
+  <Entity gr:x="-205" gr:y="530" id="ent2" name="History" duration="persistent" attributeOrder="ent2#att22 ent2#att23 ent2#att24 ent2#att25 ent2#att33 ent2#att34" db:database="db1" db:table="history">
     <Attribute id="ent2#att22" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent2#att23" name="title" type="string" db:column="title"/>
     <Attribute id="ent2#att24" name="description" type="string" db:column="description"/>
     <Attribute id="ent2#att25" name="details" type="text" db:column="details"/>
+    <Attribute id="ent2#att33" name="userOid" type="integer" derivationQuery="simpleImported::Self.rel4#role8.userOID"/>
+    <Attribute id="ent2#att34" name="userName" type="string" derivationQuery="simpleImported::Self.rel4#role8.userName"/>
   </Entity>
   <Relationship id="rel4" name="User_History" sourceEntity="User" targetEntity="ent2" gr:bendpoints="-40,261,90,-204" db:database="db1" db:table="history">
     <RelationshipRole1 id="rel4#role7" name="UserToHistory" maxCard="N">

@@ -1,6 +1,47 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="175" gr:y="195" id="sv3#page8" name="HomeStaff">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="50" gr:y="0" id="sv3#page8" name="HomeStaff">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="25" gr:y="170" id="sv3#page8#pwu7" name="Patients" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName email User#att6" linkOrder="sv3#page8#pwu7#ln36">
+      <Selector id="sv3#page8#pwu7#su12" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#page8#pwu7#su12#acond3" name="staffOid" predicate="eq" booleanOperator="or" implied="false" attributes="User#att32"/>
+      </Selector>
+      <Link id="sv3#page8#pwu7#ln36" name="Ver historial" to="sv3#page13#seu11" type="normal" validate="true">
+        <LinkParameter id="sv3#page8#pwu7#ln36#par88" name="oid_userOid" source="data[].userOID" target="sv3#page13#seu11#su18#acond9"/>
+      </Link>
+    </PowerIndexUnit>
+    <SelectorUnit id="sv3#page8#seu8" name="StaffSelector" gr:x="255" gr:y="5" entity="User">
+      <Selector id="sv3#page8#seu8#su13" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#page8#seu8#su13#acond4" name="group" predicate="eq" booleanOperator="or" implied="false" attributes="User#att26" value="2"/>
+      </Selector>
+      <Link id="sv3#page8#seu8#ln29" name="Flow29" to="sv3#page8#pwu7" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <GetUnit gr:x="0" gr:y="0" id="sv3#page8#gtu2" name="GetUserOid" contextParameters="UserCtxParam">
+      <Link id="sv3#page8#gtu2#ln30" name="Flow30" to="sv3#page8#pwu7" type="transport" validate="true">
+        <LinkParameter id="sv3#page8#gtu2#ln30#par85" name="UserCtxParam.oid_patientOid" source="sv3#page8#gtu2.UserCtxParam" target="sv3#page8#pwu7#su12#acond3"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
   <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page8#pwu7">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att6"/>
+          <layout:Link link="sv3#page8#pwu7#ln36"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
     <layout:Row>
       <layout:Cell colspan="12"/>
       <layout:Cell/>

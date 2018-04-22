@@ -1,15 +1,53 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-50" gr:y="120" id="sv2#page9" name="AdminHome">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-35" gr:y="-190" id="sv2#page9" name="Users" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv2#page9#inu1" name="UsersList" entity="User" displayAttributes="userName password email User#att6"/>
+    <PowerIndexUnit gr:x="0" gr:y="255" id="sv2#page9#pwu9" name="Staff" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName email User#att6" linkOrder="sv2#page9#pwu9#ln33 sv2#page9#pwu9#ln35">
+      <Selector id="sv2#page9#pwu9#su16" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#page9#pwu9#su16#acond7" name="groupOid" predicate="eq" booleanOperator="or" implied="false" attributes="User#att26" value="2"/>
+      </Selector>
+      <Link id="sv2#page9#pwu9#ln33" name="Delete" to="sv2#dlu1" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page9#pwu9#ln35" name="Modify" to="sv2#page5#seu3" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <PowerIndexUnit gr:x="235" gr:y="220" id="sv2#page9#pwu10" name="Patient" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName email User#att6 User#att31" linkOrder="sv2#page9#pwu10#ln32 sv2#page9#pwu10#ln34">
+      <Selector id="sv2#page9#pwu10#su17" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#page9#pwu10#su17#acond8" name="groupOid" predicate="eq" booleanOperator="or" implied="false" value="3" attributes="User#att26"/>
+      </Selector>
+      <Link id="sv2#page9#pwu10#ln32" name="Delete" to="sv2#dlu1" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#page9#pwu10#ln34" name="Modify" to="sv2#page5#seu3" type="normal" automaticCoupling="true" validate="true"/>
+    </PowerIndexUnit>
+    <MultiMessageUnit id="sv2#page9#mssu10" name="UsersMessage" gr:x="265" gr:y="0"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page9#inu1">
+        <layout:Unit unitId="sv2#page9#pwu9">
           <layout:Attribute attribute="userName"/>
-          <layout:Attribute attribute="password"/>
           <layout:Attribute attribute="email"/>
           <layout:Attribute attribute="User#att6"/>
+          <layout:Link link="sv2#page9#pwu9#ln33"/>
+          <layout:Link link="sv2#page9#pwu9#ln35"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page9#pwu10">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att6"/>
+          <layout:Attribute attribute="User#att31"/>
+          <layout:Link link="sv2#page9#pwu10#ln32"/>
+          <layout:Link link="sv2#page9#pwu10#ln34"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

@@ -1,3 +1,5 @@
-<SiteView id="sv3" name="staff" protected="true" homePage="sv3#page8">
-  <OperationUnits/>
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="staff" protected="true" homePage="sv3#page8">
+  <OperationUnits>
+    <LogoutUnit gr:x="645" gr:y="105" id="sv3#lou3" name="Logout" siteView="sv1"/>
+  </OperationUnits>
 </SiteView>

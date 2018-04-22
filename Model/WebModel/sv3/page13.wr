@@ -1,0 +1,35 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="45" gr:y="390" id="sv3#page13" name="Patient History">
+  <ContentUnits>
+    <SelectorUnit gr:x="20" gr:y="0" id="sv3#page13#seu11" name="Historial Paciente" entity="ent2">
+      <Selector id="sv3#page13#seu11#su18" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#page13#seu11#su18#acond9" name="userOid" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att33"/>
+      </Selector>
+      <Link id="sv3#page13#seu11#ln37" name="Flow37" to="sv3#page13#pwu11" type="transport" validate="true">
+        <LinkParameter id="sv3#page13#seu11#ln37#par90" name="userOid_patientOid [oid]" source="ent2#att33Array" target="sv3#page13#pwu11#su19#kcond13.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <PowerIndexUnit gr:x="0" gr:y="150" id="sv3#page13#pwu11" name="Pacientes" sortable="true" checkable="false" useCountQuery="false" entity="User">
+      <Selector id="sv3#page13#pwu11#su19" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#page13#pwu11#su19#kcond13" name="patientOid" predicate="in" implied="false"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page13#pwu11"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

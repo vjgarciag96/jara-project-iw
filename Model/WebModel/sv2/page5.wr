@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="595" gr:y="435" id="sv2#page5" name="UpdateScreen">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-40" gr:y="295" id="sv2#page5" name="UpdateScreen">
   <ContentUnits>
     <EntryUnit gr:x="25" gr:y="160" id="sv2#page5#enu4" name="UpdateUserForm" entity="User" linkOrder="sv2#page5#enu4#ln13">
       <Field id="sv2#page5#enu4#fld11" name="userName" type="string" modifiable="true" attribute="userName"/>
