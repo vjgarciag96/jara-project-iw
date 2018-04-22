@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="admin" homePage="sv2#page9" landmarks="sv2#page2 sv2#page3 sv2#page4 sv2#lou1">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="admin" homePage="sv2#page9" landmarks="sv2#page2 sv2#page3 sv2#page4 sv2#lou1 sv2#page10 sv2#page11 sv2#page12">
   <OperationUnits>
     <CreateUnit gr:x="735" gr:y="85" id="sv2#cru1" name="CreateUser" entity="User">
       <KOLink id="sv2#cru1#kln1" to="sv2#page2#mssu1" gr:bendpoints="-183,89,62,-131">
@@ -24,6 +24,52 @@
         <KeyCondition id="sv2#mfu2#su5#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
       </Selector>
     </ModifyUnit>
-    <LogoutUnit gr:x="1045" gr:y="425" id="sv2#lou1" name="LogoutAdmin" siteView="sv1" landmark="true"/>
+    <LogoutUnit gr:x="975" gr:y="405" id="sv2#lou1" name="LogoutAdmin" siteView="sv1" landmark="true"/>
+    <CreateUnit gr:x="10" gr:y="745" id="sv2#cru3" name="CreatePatient" entity="User">
+      <OKLink id="sv2#cru3#oln6" name="OKFlow6" to="sv2#page10#mssu7" gr:bendpoints="8,-86,-112,49">
+        <LinkParameter id="sv2#cru3#oln6#par70" name="Patient successfuly created_Shown Messages" sourceValue="Patient successfully created" target="sv2#page10#mssu7.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#cru3#kln7" name="KOFlow7" to="sv2#page10#mssu7" gr:bendpoints="107,-48,-13,87">
+        <LinkParameter id="sv2#cru3#kln7#par71" name="Error creating patient_Shown Messages" sourceValue="Error creating patient" target="sv2#page10#mssu7.shownMessages"/>
+      </KOLink>
+    </CreateUnit>
+    <CreateUnit gr:x="1810" gr:y="180" id="sv2#cru4" name="CreateMedicalCenter" entity="ent4">
+      <KOLink id="sv2#cru4#kln8" to="sv2#page11#mssu8">
+        <LinkParameter id="sv2#cru4#kln8#par73" name="Failed creating data_Shown Messages" sourceValue="Error creating Medical Center" target="sv2#page11#mssu8.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#cru4#oln7" to="sv2#page11#mssu8" gr:bendpoints="-127,121,183,1">
+        <LinkParameter id="sv2#cru4#oln7#par74" name="Data created correctly_Shown Messages" sourceValue="Medical center successfully created" target="sv2#page11#mssu8.shownMessages"/>
+      </OKLink>
+    </CreateUnit>
+    <CreateUnit gr:x="1880" gr:y="540" id="sv2#cru5" name="CreateDepartment" entity="ent3">
+      <KOLink id="sv2#cru5#kln9" to="sv2#page12#mssu9">
+        <LinkParameter id="sv2#cru5#kln9#par76" name="Failed creating data_Shown Messages" sourceValue="Error creating new Department" target="sv2#page12#mssu9.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#cru5#oln8" to="sv2#page12#mssu9" gr:bendpoints="-128,175,217,-5">
+        <LinkParameter id="sv2#cru5#oln8#par77" name="Data created correctly_Shown Messages" sourceValue="Department successfully created" target="sv2#page12#mssu9.shownMessages"/>
+      </OKLink>
+    </CreateUnit>
+    <DeleteUnit gr:x="1400" gr:y="435" id="sv2#dlu2" name="Delete Department" entity="ent3">
+      <Selector id="sv2#dlu2#su10" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu2#su10#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#dlu2#oln9" name="OKFlow9" to="sv2#page12#mssu9">
+        <LinkParameter id="sv2#dlu2#oln9#par81" name="Department deleted successfully_Shown Messages" sourceValue="Department deleted successfully" target="sv2#page12#mssu9.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#dlu2#kln10" name="KOFlow10" to="sv2#page12#mssu9" gr:bendpoints="128,87,53,-83">
+        <LinkParameter id="sv2#dlu2#kln10#par82" name="Error deleting department_Shown Messages" sourceValue="Error deleting department" target="sv2#page12#mssu9.shownMessages"/>
+      </KOLink>
+    </DeleteUnit>
+    <DeleteUnit gr:x="1760" gr:y="10" id="sv2#dlu3" name="Delete Medical Center" entity="ent4">
+      <Selector id="sv2#dlu3#su11" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu3#su11#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#dlu3#oln10" name="OKFlow10" to="sv2#page11#mssu8" gr:bendpoints="-199,27,96,-98">
+        <LinkParameter id="sv2#dlu3#oln10#par83" name="Medical center deleted successfully_Shown Messages" sourceValue="Medical center deleted successfully" target="sv2#page11#mssu8.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#dlu3#kln11" name="KOFlow11" to="sv2#page11#mssu8" gr:bendpoints="-155,82,140,-43">
+        <LinkParameter id="sv2#dlu3#kln11#par84" name="Error deleting Medical Center_Shown Messages" sourceValue="Error deleting Medical Center" target="sv2#page11#mssu8.shownMessages"/>
+      </KOLink>
+    </DeleteUnit>
   </OperationUnits>
 </SiteView>

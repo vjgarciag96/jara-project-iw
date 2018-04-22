@@ -1,0 +1,65 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1210" gr:y="570" id="sv2#page12" name="New Department" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="265" gr:y="200" id="sv2#page12#enu9" name="New Department Form" entity="ent3" linkOrder="sv2#page12#enu9#ln25">
+      <Field id="sv2#page12#enu9#fld29" name="oid" type="integer" modifiable="false" hidden="true"/>
+      <Field id="sv2#page12#enu9#fld30" name="departmentName" type="string" modifiable="true"/>
+      <Link id="sv2#page12#enu9#ln25" name="Load" to="sv2#cru5" type="normal" validate="true" gr:bendpoints="301,-92,-69,178">
+        <LinkParameter id="sv2#page12#enu9#ln25#par75" name="departmentName_departmentName" source="sv2#page12#enu9#fld30" target="sv2#cru5.ent3#att1"/>
+        <LinkParameter id="sv2#page12#enu9#ln25#par80" name="medicalCenter_MedicCenter.oid(DepartmentToMedicCenter)" source="sv2#page12#enu9#sfld5" target="sv2#cru5.rel8#role16.ent4#att4"/>
+      </Link>
+      <SelectionField id="sv2#page12#enu9#sfld5" name="medicalCenter" type="string"/>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="245" gr:y="15" id="sv2#page12#mssu9" name="Department Message"/>
+    <SelectorUnit gr:x="50" gr:y="125" id="sv2#page12#seu7" name="MedicalCenters" entity="ent4">
+      <Link id="sv2#page12#seu7#ln26" name="Flow26" to="sv2#page12#enu9" type="transport" validate="true">
+        <LinkParameter id="sv2#page12#seu7#ln26#par78" name="centerName_medicalCenter [label]" source="ent4#att2Array" target="sv2#page12#enu9#sfld5_label"/>
+        <LinkParameter id="sv2#page12#seu7#ln26#par79" name="oid_medicalCenter [output]" source="ent4#att4Array" target="sv2#page12#enu9#sfld5_output"/>
+      </Link>
+    </SelectorUnit>
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv2#page12#pwu6" name="Departments" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att1 ent3#att30" linkOrder="sv2#page12#pwu6#ln27">
+      <Link id="sv2#page12#pwu6#ln27" name="Delete" to="sv2#dlu2" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page12#enu9">
+          <layout:Link link="sv2#page12#enu9#ln25"/>
+          <layout:Field field="sv2#page12#enu9#fld30"/>
+          <layout:Field field="sv2#page12#enu9#sfld5"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page12#pwu6">
+          <layout:Attribute attribute="ent3#att1"/>
+          <layout:Attribute attribute="ent3#att30"/>
+          <layout:Link link="sv2#page12#pwu6#ln27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,55 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1405" gr:y="-35" id="sv2#page11" name="New Medical Center" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="285" id="sv2#page11#enu8" name="New Medical Center Form" entity="ent4" linkOrder="sv2#page11#enu8#ln24">
+      <Field id="sv2#page11#enu8#fld27" name="oid" type="integer" modifiable="false" hidden="true"/>
+      <Field id="sv2#page11#enu8#fld28" name="centerName" type="string" modifiable="true"/>
+      <Link id="sv2#page11#enu8#ln24" name="Create" to="sv2#cru4" type="normal" validate="true" gr:bendpoints="262,-40,-113,135">
+        <LinkParameter id="sv2#page11#enu8#ln24#par72" name="centerName_centerName" source="sv2#page11#enu8#fld28" target="sv2#cru4.ent4#att2"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="10" gr:y="180" id="sv2#page11#mssu8" name="MedicalCenterMessage"/>
+    <PowerIndexUnit gr:x="5" gr:y="0" id="sv2#page11#pwu5" name="Medical Centers" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att2" linkOrder="sv2#page11#pwu5#ln28">
+      <Link id="sv2#page11#pwu5#ln28" name="Delete" to="sv2#dlu3" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page11#enu8">
+          <layout:Field field="sv2#page11#enu8#fld28"/>
+          <layout:Link link="sv2#page11#enu8#ln24"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page11#pwu5">
+          <layout:Attribute attribute="ent4#att2"/>
+          <layout:Link link="sv2#page11#pwu5#ln28"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

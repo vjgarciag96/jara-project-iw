@@ -1,0 +1,70 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-95" gr:y="395" id="sv2#page10" name="New Patient" landmark="true">
+  <ContentUnits>
+    <EntryUnit id="sv2#page10#enu7" name="UserForm" gr:x="0" gr:y="115" entity="User" linkOrder="sv2#page10#enu7#ln22">
+      <Field id="sv2#page10#enu7#fld22" name="oid" type="integer" modifiable="false" hidden="true"/>
+      <Field id="sv2#page10#enu7#fld23" name="userName" type="string" modifiable="true"/>
+      <Field id="sv2#page10#enu7#fld24" name="password" type="string" modifiable="true"/>
+      <Field id="sv2#page10#enu7#fld25" name="email" type="string" modifiable="true"/>
+      <Link id="sv2#page10#enu7#ln22" name="Create" to="sv2#cru3" type="normal" validate="true">
+        <LinkParameter id="sv2#page10#enu7#ln22#par61" name="email_email" source="sv2#page10#enu7#fld25" target="sv2#cru3.email"/>
+        <LinkParameter id="sv2#page10#enu7#ln22#par62" name="3_Group.oid(defaultGroup)" sourceValue="3" target="sv2#cru3.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv2#page10#enu7#ln22#par63" name="_Group.oid(groups)" blank="true" target="sv2#cru3.User2Group.groupOID"/>
+        <LinkParameter id="sv2#page10#enu7#ln22#par64" name="password_password" source="sv2#page10#enu7#fld24" target="sv2#cru3.password"/>
+        <LinkParameter id="sv2#page10#enu7#ln22#par65" name="Key [oid]_User.oid(UserToUser1)" source="key.userOID" target="sv2#cru3.rel2#role3.userOID"/>
+        <LinkParameter id="sv2#page10#enu7#ln22#par66" name="userName_userName" source="sv2#page10#enu7#fld23" target="sv2#cru3.userName"/>
+      </Link>
+      <SelectionField id="sv2#page10#enu7#sfld4" name="staff" type="string"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="170" gr:y="0" id="sv2#page10#seu6" name="StaffSelector" entity="User">
+      <Link id="sv2#page10#seu6#ln23" name="Flow23" to="sv2#page10#enu7" type="transport" validate="true">
+        <LinkParameter id="sv2#page10#seu6#ln23#par67" name="oid_Key Condition [oid]" source="userOIDArray" target="sv2#page10#enu7.userOID"/>
+        <LinkParameter id="sv2#page10#seu6#ln23#par68" name="userName_staff [label]" source="userNameArray" target="sv2#page10#enu7#sfld4_label"/>
+        <LinkParameter id="sv2#page10#seu6#ln23#par69" name="oid_staff [output]" source="userOIDArray" target="sv2#page10#enu7#sfld4_output"/>
+      </Link>
+      <Selector id="sv2#page10#seu6#su9" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#page10#seu6#su9#acond2" name="group" predicate="eq" booleanOperator="or" implied="false" attributes="User#att26" value="2"/>
+      </Selector>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="270" gr:y="210" id="sv2#page10#mssu7" name="Create Patient"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page10#enu7">
+          <layout:Link link="sv2#page10#enu7#ln22"/>
+          <layout:Field field="sv2#page10#enu7#fld23"/>
+          <layout:Field field="sv2#page10#enu7#fld24"/>
+          <layout:Field field="sv2#page10#enu7#fld25"/>
+          <layout:Field field="sv2#page10#enu7#sfld4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page10#mssu7"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

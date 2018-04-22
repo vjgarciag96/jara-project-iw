@@ -277,4 +277,26 @@
       <OKLink id="oln4"/>
     </SiteView>
   </Pattern>
+<Pattern id="p1" name="Create (default)">
+    <SiteView id="sv2" name="SiteView">
+      <Page id="page11"/>
+      <EntryUnit id="enu8"/>
+      <MultiMessageUnit id="mssu8"/>
+      <CreateUnit id="cru4"/>
+      <NormalNavigationFlow id="ln24"/>
+      <KOLink id="kln8"/>
+      <OKLink id="oln7"/>
+    </SiteView>
+  </Pattern>
+<Pattern id="p1" name="Create (default)">
+    <SiteView id="sv2" name="SiteView">
+      <Page id="page12"/>
+      <EntryUnit id="enu9"/>
+      <MultiMessageUnit id="mssu9"/>
+      <CreateUnit id="cru5"/>
+      <NormalNavigationFlow id="ln25"/>
+      <KOLink id="kln9"/>
+      <OKLink id="oln8"/>
+    </SiteView>
+  </Pattern>
 </Registry>

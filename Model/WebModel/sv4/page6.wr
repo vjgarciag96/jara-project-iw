@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="85" gr:y="50" id="sv4#page6" name="PatientHome">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="70" gr:y="20" id="sv4#page6" name="PatientHome">
   <ContentUnits>
     <EntryUnit id="sv4#page6#enu6" name="ScheduleForm" linkOrder="sv4#page6#enu6#ln15" gr:x="245" gr:y="70" entity="ent5">
       <Field id="sv4#page6#enu6#fld18" name="oid" type="integer" modifiable="false" hidden="true"/>

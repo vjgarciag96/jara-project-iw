@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="330" gr:y="400" id="sv2#page4" name="Update User" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="390" gr:y="515" id="sv2#page4" name="Update User" landmark="true">
   <ContentUnits>
-    <IndexUnit id="sv2#page4#inu2" name="Simple List1" gr:x="15" gr:y="105" entity="User" displayAttributes="userName password email User#att6" linkOrder="sv2#page4#inu2#ln10">
+    <IndexUnit id="sv2#page4#inu2" name="Simple List1" gr:x="0" gr:y="0" entity="User" displayAttributes="userName password email User#att6" linkOrder="sv2#page4#inu2#ln10">
       <Link id="sv2#page4#inu2#ln10" name="Modify" to="sv2#page5#seu3" type="normal" automaticCoupling="true" validate="true"/>
     </IndexUnit>
   </ContentUnits>

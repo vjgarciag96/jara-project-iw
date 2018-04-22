@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-50" gr:y="120" id="sv2#page9" name="AdminHome">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv2#page9#inu1" name="Simple List1" entity="User" displayAttributes="userName password email User#att6"/>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#page9#inu1" name="UsersList" entity="User" displayAttributes="userName password email User#att6"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>

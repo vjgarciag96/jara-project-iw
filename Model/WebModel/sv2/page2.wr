@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="5" id="sv2#page2" name="CreateUser" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="5" id="sv2#page2" name="New Staff" landmark="true">
   <ContentUnits>
     <EntryUnit gr:x="130" gr:y="0" id="sv2#page2#enu2" name="UserForm" entity="User" linkOrder="sv2#page2#enu2#ln2">
       <Field id="sv2#page2#enu2#fld3" name="oid" type="integer" modifiable="false" hidden="true"/>
