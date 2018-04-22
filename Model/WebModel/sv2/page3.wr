@@ -1,0 +1,31 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="890" gr:y="80" id="sv2#page3" name="Delete User" landmark="true">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv2#page3#pwu1" name="UserList" sortable="true" checkable="false" useCountQuery="false" entity="User" linkOrder="sv2#page3#pwu1#ln4" displayAttributes="userName email User#att6">
+      <Link id="sv2#page3#pwu1#ln4" name="Delete" to="sv2#dlu1" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <MultiMessageUnit gr:x="5" gr:y="155" id="sv2#page3#mssu3" name="UserDeleteMessage"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page3#pwu1">
+          <layout:Link link="sv2#page3#pwu1#ln4"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

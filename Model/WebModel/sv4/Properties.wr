@@ -1,0 +1,13 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="patient" protected="true" homePage="sv4#page6" landmarks="sv4#lou2">
+  <OperationUnits>
+    <CreateUnit gr:x="770" gr:y="115" id="sv4#cru2" name="CreateUnit" entity="ent5">
+      <KOLink id="sv4#cru2#kln6" to="sv4#page6#mssu6" gr:bendpoints="-266,70,274,-130">
+        <LinkParameter id="sv4#cru2#kln6#par47" name="Failed creating data_Shown Messages" target="sv4#page6#mssu6.shownMessages" sourceValue="Failed creating data"/>
+      </KOLink>
+      <OKLink id="sv4#cru2#oln5" to="sv4#page6#mssu6" gr:bendpoints="-227,161,313,-39">
+        <LinkParameter id="sv4#cru2#oln5#par48" name="Data created correctly_Shown Messages" target="sv4#page6#mssu6.shownMessages" sourceValue="Data created correctly"/>
+      </OKLink>
+    </CreateUnit>
+    <LogoutUnit id="sv4#lou2" name="LogoutPatient" gr:x="725" gr:y="335" siteView="sv1" landmark="true"/>
+  </OperationUnits>
+</SiteView>

@@ -1,0 +1,29 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="admin" homePage="sv2#page9" landmarks="sv2#page2 sv2#page3 sv2#page4 sv2#lou1">
+  <OperationUnits>
+    <CreateUnit gr:x="735" gr:y="85" id="sv2#cru1" name="CreateUser" entity="User">
+      <KOLink id="sv2#cru1#kln1" to="sv2#page2#mssu1" gr:bendpoints="-183,89,62,-131">
+        <LinkParameter id="sv2#cru1#kln1#par6" name="Failed creating data_Shown Messages" sourceValue="Error creating User" target="sv2#page2#mssu1.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#cru1#oln1" to="sv2#page2#mssu1" gr:bendpoints="-80,166,165,-54">
+        <LinkParameter id="sv2#cru1#oln1#par7" name="Data created correctly_Shown Messages" sourceValue="User created successfully" target="sv2#page2#mssu1.shownMessages"/>
+      </OKLink>
+    </CreateUnit>
+    <DeleteUnit gr:x="1235" gr:y="55" id="sv2#dlu1" name="DeleteUnit" entity="User">
+      <Selector id="sv2#dlu1#su1" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="sv2#dlu1#kln2" to="sv2#page3#mssu3" gr:bendpoints="-123,119,167,-81">
+        <LinkParameter id="sv2#dlu1#kln2#par10" name="Failed deleting data_Shown Messages" sourceValue="Failed deleting data" target="sv2#page3#mssu3.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#dlu1#oln2" to="sv2#page3#mssu3" gr:bendpoints="-44,173,176,53">
+        <LinkParameter id="sv2#dlu1#oln2#par11" name="Data deleted correctly_Shown Messages" sourceValue="User deleted successfully" target="sv2#page3#mssu3.shownMessages"/>
+      </OKLink>
+    </DeleteUnit>
+    <ModifyUnit gr:x="1025" gr:y="615" id="sv2#mfu2" name="UpdateUser" entity="User">
+      <Selector id="sv2#mfu2#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu2#su5#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <LogoutUnit gr:x="1045" gr:y="425" id="sv2#lou1" name="LogoutAdmin" siteView="sv1" landmark="true"/>
+  </OperationUnits>
+</SiteView>

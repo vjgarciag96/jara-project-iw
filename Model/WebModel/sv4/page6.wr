@@ -1,0 +1,90 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="85" gr:y="50" id="sv4#page6" name="PatientHome">
+  <ContentUnits>
+    <EntryUnit id="sv4#page6#enu6" name="ScheduleForm" linkOrder="sv4#page6#enu6#ln15" gr:x="245" gr:y="70" entity="ent5">
+      <Field id="sv4#page6#enu6#fld18" name="oid" type="integer" modifiable="false" hidden="true"/>
+      <Field id="sv4#page6#enu6#fld19" name="date" type="timestamp" modifiable="true"/>
+      <Field id="sv4#page6#enu6#fld20" name="description" type="text" modifiable="true"/>
+      <Link id="sv4#page6#enu6#ln15" name="Schedule" to="sv4#cru2" type="normal" validate="true">
+        <LinkParameter id="sv4#page6#enu6#ln15#par45" name="description_description" source="sv4#page6#enu6#fld20" target="sv4#cru2.ent5#att12"/>
+        <LinkParameter id="sv4#page6#enu6#ln15#par46" name="date_date" source="sv4#page6#enu6#fld19" target="sv4#cru2.ent5#att11"/>
+        <LinkParameter id="sv4#page6#enu6#ln15#par53" name="patientOid_User.oid(ScheduleToUser_2)" source="sv4#page6#enu6#fld21" target="sv4#cru2.rel5#role9.userOID"/>
+      </Link>
+      <Field id="sv4#page6#enu6#fld21" name="patientOid" type="string" modifiable="false" preloaded="true" hidden="true"/>
+    </EntryUnit>
+    <MultiMessageUnit id="sv4#page6#mssu6" name="ScheduleMessage" gr:x="115" gr:y="285"/>
+    <GetUnit gr:x="55" gr:y="0" id="sv4#page6#gtu1" name="GetUserOid" contextParameters="UserCtxParam">
+      <Link id="sv4#page6#gtu1#ln17" name="Flow17" to="sv4#page6#enu6" type="transport" validate="true">
+        <LinkParameter id="sv4#page6#gtu1#ln17#par50" name="UserCtxParam.oid_patientOid" source="sv4#page6#gtu1.UserCtxParam" target="sv4#page6#enu6#fld21_slot"/>
+      </Link>
+      <Link id="sv4#page6#gtu1#ln19" name="Flow19" to="sv4#page6#pwu4" type="transport" validate="true">
+        <LinkParameter id="sv4#page6#gtu1#ln19#par54" name="UserCtxParam.oid_patiendOid" source="sv4#page6#gtu1.UserCtxParam" target="sv4#page6#pwu4#su8#acond1"/>
+      </Link>
+    </GetUnit>
+    <PowerIndexUnit gr:x="0" gr:y="125" id="sv4#page6#pwu4" name="UserSchedules" sortable="true" checkable="false" useCountQuery="false" entity="ent5" displayAttributes="ent5#att5 ent5#att11 ent5#att12 ent5#att17 ent5#att18 ent5#att21 ent5#att19 ent5#att20">
+      <Selector id="sv4#page6#pwu4#su8" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#page6#pwu4#su8#acond1" name="patiendOid" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att21"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page6#enu6">
+          <layout:Link link="sv4#page6#enu6#ln15"/>
+          <layout:Field field="sv4#page6#enu6#fld19"/>
+          <layout:Field field="sv4#page6#enu6#fld20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page6#pwu4">
+          <layout:Attribute attribute="ent5#att5"/>
+          <layout:Attribute attribute="ent5#att11"/>
+          <layout:Attribute attribute="ent5#att12"/>
+          <layout:Attribute attribute="ent5#att17"/>
+          <layout:Attribute attribute="ent5#att18"/>
+          <layout:Attribute attribute="ent5#att21"/>
+          <layout:Attribute attribute="ent5#att19"/>
+          <layout:Attribute attribute="ent5#att20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
