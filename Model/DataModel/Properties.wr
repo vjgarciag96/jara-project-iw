@@ -50,24 +50,28 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="440" gr:y="435" id="ent3" name="Department" duration="persistent" attributeOrder="ent3#att3 ent3#att1 ent3#att30" db:database="db1" db:table="department">
+  <Entity gr:x="435" gr:y="575" id="ent3" name="Department" duration="persistent" attributeOrder="ent3#att3 ent3#att1 ent3#att30" db:database="db1" db:table="department">
     <Attribute id="ent3#att3" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent3#att1" name="departmentName" type="string" db:column="departmentname"/>
     <Attribute id="ent3#att30" name="medicalCenter" type="string" derivationQuery="simpleImported::Self.rel8#role16.ent4#att2"/>
   </Entity>
-  <Entity gr:x="455" gr:y="595" id="ent4" name="MedicCenter" duration="persistent" attributeOrder="ent4#att4 ent4#att2" db:database="db1" db:table="mediccenter">
+  <Entity gr:x="495" gr:y="775" id="ent4" name="MedicCenter" duration="persistent" attributeOrder="ent4#att4 ent4#att2" db:database="db1" db:table="mediccenter">
     <Attribute id="ent4#att4" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent4#att2" name="centerName" type="string" db:column="centername"/>
   </Entity>
-  <Entity gr:x="115" gr:y="505" id="ent5" name="Schedule" duration="persistent" attributeOrder="ent5#att5 ent5#att11 ent5#att12 ent5#att17 ent5#att18 ent5#att21 ent5#att19 ent5#att20" db:database="db1" db:table="schedule">
+  <Entity gr:x="-55" gr:y="565" id="ent5" name="Schedule" duration="persistent" attributeOrder="ent5#att5 ent5#att12 ent5#att17 ent5#att18 ent5#att21 ent5#att19 ent5#att20 ent5#att13 ent5#att11 ent5#att37 ent5#att39 ent5#att40" db:database="db1" db:table="schedule">
     <Attribute id="ent5#att5" key="true" name="oid" type="integer" db:column="oid"/>
-    <Attribute id="ent5#att11" name="date" type="timestamp" db:column="date"/>
     <Attribute id="ent5#att12" name="description" type="text" db:column="description"/>
     <Attribute id="ent5#att17" name="state" type="string" derivationQuery="simpleImported::Self.rel6#role11.ent9#att16"/>
     <Attribute id="ent5#att18" name="stateDescription" type="text" derivationQuery="simpleImported::Self.rel6#role11.ent9#att15"/>
     <Attribute id="ent5#att19" name="patientName" type="string" derivationQuery="simpleImported::Self.rel5#role9.userName"/>
     <Attribute id="ent5#att20" name="staff" type="string" derivationQuery="simpleImported::Self.rel10#role20.userName"/>
     <Attribute id="ent5#att21" name="patientOid" type="integer" derivationQuery="simpleImported::Self.rel5#role9.userOID"/>
+    <Attribute id="ent5#att13" name="staffOid" type="integer" derivationQuery="simpleImported::Self.rel10#role20.userOID"/>
+    <Attribute id="ent5#att11" name="dayhour" type="string" derivationQuery="simpleImported::Self.rel11#role21.ent10#att36"/>
+    <Attribute id="ent5#att37" name="date" db:column="date" type="timestamp" key="false"/>
+    <Attribute id="ent5#att39" name="details" type="text" db:column="details"/>
+    <Attribute id="ent5#att40" name="dayhourOid" type="integer" derivationQuery="simpleImported::Self.rel11#role21.ent10#att49"/>
   </Entity>
   <Entity gr:x="-215" gr:y="390" id="ent7" name="PatientData" duration="persistent" attributeOrder="ent7#att7 ent7#att8" db:database="db1" db:table="patientdata">
     <Attribute id="ent7#att7" key="true" name="oid" type="integer" db:column="oid"/>
@@ -89,7 +93,7 @@
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="300" gr:y="185" id="ent8" name="StaffData" duration="persistent" attributeOrder="ent8#att9 ent8#att10 ent8#att27 ent8#att28 ent8#att29" db:database="db1" db:table="staffdata">
+  <Entity gr:x="240" gr:y="285" id="ent8" name="StaffData" duration="persistent" attributeOrder="ent8#att9 ent8#att10 ent8#att27 ent8#att28 ent8#att29" db:database="db1" db:table="staffdata">
     <Attribute id="ent8#att9" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent8#att10" name="staffId" type="string" db:column="staffid"/>
     <Attribute id="ent8#att27" name="userOid" type="integer" derivationQuery="simpleImported::Self.rel3#role6.userOID"/>
@@ -105,20 +109,20 @@
     </RelationshipRole2>
   </Relationship>
   <Relationship id="rel5" name="Patient_Schedule" sourceEntity="ent5" targetEntity="User" gr:bendpoints="-15,-162,-55,183" db:database="db1" db:table="schedule">
-    <RelationshipRole1 id="rel5#role9" name="ScheduleToUser_2" maxCard="1">
+    <RelationshipRole1 id="rel5#role9" name="SchedulePatient" maxCard="1" cascadeDelete="false">
       <db:JoinColumn attribute="ent5#att5" name="oid"/>
     </RelationshipRole1>
-    <RelationshipRole2 id="rel5#role10" name="UserToSchedule_2" maxCard="N">
+    <RelationshipRole2 id="rel5#role10" name="SchedulePatient" maxCard="N">
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="100" gr:y="795" id="ent9" name="ScheduleState" duration="persistent" attributeOrder="ent9#att14 ent9#att16 ent9#att15" db:database="db1" db:table="schedulestate">
+  <Entity gr:x="115" gr:y="1010" id="ent9" name="ScheduleState" duration="persistent" attributeOrder="ent9#att14 ent9#att16 ent9#att15" db:database="db1" db:table="schedulestate">
     <Attribute id="ent9#att14" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent9#att15" name="description" type="text" db:column="description"/>
     <Attribute id="ent9#att16" name="stateName" type="string" db:column="statename"/>
   </Entity>
   <Relationship id="rel6" name="Schedule_ScheduleState" sourceEntity="ent5" targetEntity="ent9" db:database="db1" db:table="schedule">
-    <RelationshipRole1 id="rel6#role11" name="ScheduleToScheduleState" maxCard="1">
+    <RelationshipRole1 id="rel6#role11" name="ScheduleToScheduleState" maxCard="1" cascadeDelete="false">
       <db:JoinColumn attribute="ent5#att5" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel6#role12" name="ScheduleStateToSchedule" maxCard="N">
@@ -144,27 +148,35 @@
   <db:Database id="db1" name="aquiles-db" type="PostgreSQL 9" url="jdbc:postgresql://localhost:32768/Aquiles" username="postgres" schema="public">
   </db:Database>
   <Relationship id="rel10" name="Staff_Schedule" sourceEntity="User" targetEntity="ent5" gr:bendpoints="58,185,108,-165" db:database="db1" db:table="schedule">
-    <RelationshipRole1 id="rel10#role19" name="UserToSchedule" maxCard="N">
+    <RelationshipRole1 id="rel10#role19" name="ScheduleStaff" maxCard="N" cascadeDelete="false">
       <db:JoinColumn attribute="userOID" name="user_oid_2"/>
     </RelationshipRole1>
-    <RelationshipRole2 id="rel10#role20" name="ScheduleToUser" maxCard="1">
+    <RelationshipRole2 id="rel10#role20" name="ScheduleStaff" maxCard="1">
       <db:JoinColumn attribute="ent5#att5" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="-205" gr:y="530" id="ent2" name="History" duration="persistent" attributeOrder="ent2#att22 ent2#att23 ent2#att24 ent2#att25 ent2#att33 ent2#att34" db:database="db1" db:table="history">
-    <Attribute id="ent2#att22" key="true" name="oid" type="integer" db:column="oid"/>
-    <Attribute id="ent2#att23" name="title" type="string" db:column="title"/>
-    <Attribute id="ent2#att24" name="description" type="string" db:column="description"/>
-    <Attribute id="ent2#att25" name="details" type="text" db:column="details"/>
-    <Attribute id="ent2#att33" name="userOid" type="integer" derivationQuery="simpleImported::Self.rel4#role8.userOID"/>
-    <Attribute id="ent2#att34" name="userName" type="string" derivationQuery="simpleImported::Self.rel4#role8.userName"/>
+  <Entity gr:x="545" gr:y="185" id="ent10" name="TimeTableItem" duration="persistent" attributeOrder="ent10#att49 ent10#att50 ent10#att51 ent10#att52 ent10#att53 ent10#att36" db:database="db1" db:table="timetableitem">
+    <Attribute id="ent10#att49" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent10#att50" name="starttime" type="string" db:column="starttime"/>
+    <Attribute id="ent10#att51" name="scheduled" type="boolean" db:column="scheduled"/>
+    <Attribute id="ent10#att52" name="day" type="string" db:column="day"/>
+    <Attribute id="ent10#att53" name="staffOid" type="integer" derivationQuery="simpleImported::Self.rel13#role26.userOID"/>
+    <Attribute id="ent10#att36" name="dayhour" type="string" derivationQuery="simpleCalculated::Self.ent10#att52 || ' ' || Self.ent10#att50"/>
   </Entity>
-  <Relationship id="rel4" name="User_History" sourceEntity="User" targetEntity="ent2" gr:bendpoints="-40,261,90,-204" db:database="db1" db:table="history">
-    <RelationshipRole1 id="rel4#role7" name="UserToHistory" maxCard="N">
+  <Relationship id="rel13" name="User_TimeTableItem" sourceEntity="User" targetEntity="ent10" db:database="db1" db:table="timetableitem">
+    <RelationshipRole1 id="rel13#role25" name="UserToTimeTableItem" maxCard="N">
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole1>
-    <RelationshipRole2 id="rel4#role8" name="HistoryToUser" maxCard="1">
-      <db:JoinColumn attribute="ent2#att22" name="oid"/>
+    <RelationshipRole2 id="rel13#role26" name="TimeTableItemToUser" maxCard="1">
+      <db:JoinColumn attribute="ent10#att49" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel11" name="Schedule_TimeTableItem" sourceEntity="ent5" targetEntity="ent10" db:database="db1" db:table="timetableitem">
+    <RelationshipRole1 id="rel11#role21" name="ScheduleToTimeTableItem" maxCard="1">
+      <db:JoinColumn attribute="ent5#att5" name="schedule_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel11#role22" name="TimeTableItemToSchedule" maxCard="1">
+      <db:JoinColumn attribute="ent10#att49" name="oid"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>

@@ -5,7 +5,7 @@
         <AttributesCondition id="sv3#page8#pwu7#su12#acond3" name="staffOid" predicate="eq" booleanOperator="or" implied="false" attributes="User#att32"/>
       </Selector>
       <Link id="sv3#page8#pwu7#ln36" name="Ver historial" to="sv3#page13#seu11" type="normal" validate="true">
-        <LinkParameter id="sv3#page8#pwu7#ln36#par88" name="oid_userOid" source="data[].userOID" target="sv3#page13#seu11#su18#acond9"/>
+        <LinkParameter id="sv3#page8#pwu7#ln36#par88" name="oid_userOid" target="sv3#page13#seu11#su18#acond9" sourceLinkParameter="sv3#page8#gtu2#ln30#par95"/>
       </Link>
     </PowerIndexUnit>
     <SelectorUnit id="sv3#page8#seu8" name="StaffSelector" gr:x="255" gr:y="5" entity="User">
@@ -17,6 +17,7 @@
     <GetUnit gr:x="0" gr:y="0" id="sv3#page8#gtu2" name="GetUserOid" contextParameters="UserCtxParam">
       <Link id="sv3#page8#gtu2#ln30" name="Flow30" to="sv3#page8#pwu7" type="transport" validate="true">
         <LinkParameter id="sv3#page8#gtu2#ln30#par85" name="UserCtxParam.oid_patientOid" source="sv3#page8#gtu2.UserCtxParam" target="sv3#page8#pwu7#su12#acond3"/>
+        <LinkParameter id="sv3#page8#gtu2#ln30#par95" name="UserCtxParam.oid_PASSING" source="sv3#page8#gtu2.UserCtxParam" passing="true"/>
       </Link>
     </GetUnit>
   </ContentUnits>

@@ -1,5 +1,21 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="staff" protected="true" homePage="sv3#page8">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="staff" protected="true" homePage="sv3#page8" landmarks="sv3#lou3 sv3#page3">
   <OperationUnits>
-    <LogoutUnit gr:x="645" gr:y="105" id="sv3#lou3" name="Logout" siteView="sv1"/>
+    <LogoutUnit gr:x="1295" gr:y="295" id="sv3#lou3" name="Cerrar Sesi&#243;n" siteView="sv1" landmark="true"/>
+    <ModifyUnit gr:x="1685" gr:y="775" id="sv3#mfu1" name="Actualizar Diagn&#243;stico" entity="ent5">
+      <Selector id="sv3#mfu1#su22" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu1#su22#kcond12" name="KeyCondition12" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu1#oln13" name="OKFlow13" to="sv3#page3#mssu3">
+        <LinkParameter id="sv3#mfu1#oln13#par102" name="Actualizado Diagn&#243;stico_Shown Messages" sourceValue="Actualizado Diagnostico" target="sv3#page3#mssu3.shownMessages"/>
+      </OKLink>
+    </ModifyUnit>
+    <ModifyUnit gr:x="650" gr:y="830" id="sv3#mfu4" name="Archivar Cita" entity="ent5">
+      <Selector id="sv3#mfu4#su26" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu4#su26#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu4#oln16" name="OKFlow16" to="sv3#page3#mssu3" gr:bendpoints="209,-172,-51,383">
+        <LinkParameter id="sv3#mfu4#oln16#par105" name="Cita finalizada con &#233;xito_Shown Messages" sourceValue="Cita finalizada con exito" target="sv3#page3#mssu3.shownMessages"/>
+      </OKLink>
+    </ModifyUnit>
   </OperationUnits>
 </SiteView>

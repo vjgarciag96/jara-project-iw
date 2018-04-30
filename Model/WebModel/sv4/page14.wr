@@ -1,0 +1,66 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-450" gr:y="190" id="sv4#page14" name="Mi Historial" landmark="true">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="25" gr:y="170" id="sv4#page14#pwu2" name="Historial" sortable="true" checkable="false" useCountQuery="false" entity="ent5" displayAttributes="ent5#att12 ent5#att17 ent5#att20 ent5#att11" linkOrder="sv4#page14#pwu2#ln18">
+      <Link id="sv4#page14#pwu2#ln18" name="Ver diagnostico" to="sv4#page14#dau3" automaticCoupling="true" type="normal" validate="true"/>
+      <Selector id="sv4#page14#pwu2#su31" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#page14#pwu2#su31#acond13" name="patientOid" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att21"/>
+      </Selector>
+    </PowerIndexUnit>
+    <GetUnit id="sv4#page14#gtu4" name="GetUserOid" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv4#page14#gtu4#ln14" name="Flow18" to="sv4#page14#pwu2" type="transport" validate="true">
+        <LinkParameter id="sv4#page14#gtu4#ln14#par111" name="UserCtxParam.oid_patientOid" source="sv4#page14#gtu4.UserCtxParam" target="sv4#page14#pwu2#su31#acond13"/>
+      </Link>
+    </GetUnit>
+    <DataUnit gr:x="10" gr:y="395" id="sv4#page14#dau3" name="Diagn&#243;stico" entity="ent5" displayAttributes="ent5#att12 ent5#att18 ent5#att20 ent5#att11 ent5#att39">
+      <Selector id="sv4#page14#dau3#su30" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page14#dau3#su30#kcond19" name="KeyCondition19" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page14#pwu2">
+          <layout:Attribute attribute="ent5#att12"/>
+          <layout:Attribute attribute="ent5#att17"/>
+          <layout:Attribute attribute="ent5#att20"/>
+          <layout:Attribute attribute="ent5#att11"/>
+          <layout:Link link="sv4#page14#pwu2#ln18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page14#dau3">
+          <layout:Attribute attribute="ent5#att12"/>
+          <layout:Attribute attribute="ent5#att18"/>
+          <layout:Attribute attribute="ent5#att20"/>
+          <layout:Attribute attribute="ent5#att11"/>
+          <layout:Attribute attribute="ent5#att39"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

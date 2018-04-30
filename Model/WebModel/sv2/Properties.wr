@@ -1,6 +1,6 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="admin" homePage="sv2#page9" landmarks="sv2#page2 sv2#lou1 sv2#page10 sv2#page11 sv2#page12 sv2#page9">
   <OperationUnits>
-    <CreateUnit gr:x="885" gr:y="-305" id="sv2#cru1" name="CreateUser" entity="User">
+    <CreateUnit gr:x="885" gr:y="-255" id="sv2#cru1" name="CreateUser" entity="User">
       <KOLink id="sv2#cru1#kln1" to="sv2#page2#mssu1" gr:bendpoints="-183,89,62,-131">
         <LinkParameter id="sv2#cru1#kln1#par6" name="Failed creating data_Shown Messages" sourceValue="Error creating User" target="sv2#page2#mssu1.shownMessages"/>
       </KOLink>
