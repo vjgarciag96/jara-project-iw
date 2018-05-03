@@ -9,7 +9,7 @@
         <LinkParameter id="sv3#mfu1#oln13#par102" name="Actualizado Diagn&#243;stico_Shown Messages" sourceValue="Actualizado Diagnostico" target="sv3#page3#mssu3.shownMessages"/>
       </OKLink>
     </ModifyUnit>
-    <ModifyUnit gr:x="650" gr:y="830" id="sv3#mfu4" name="Archivar Cita" entity="ent5">
+    <ModifyUnit gr:x="565" gr:y="910" id="sv3#mfu4" name="Archivar Cita" entity="ent5">
       <Selector id="sv3#mfu4#su26" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu4#su26#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
       </Selector>

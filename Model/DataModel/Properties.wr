@@ -1,5 +1,5 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="-55" gr:y="90" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att6 User#att26 User#att31 User#att32" db:database="db1" db:table="user">
+  <Entity id="User" name="User" duration="persistent" gr:x="-120" gr:y="75" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att6 User#att26 User#att31 User#att32" db:database="db1" db:table="user">
     <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="userName" id="userName" type="string" db:column="username"/>
     <Attribute name="password" id="password" type="password" db:column="password"/>
@@ -59,7 +59,7 @@
     <Attribute id="ent4#att4" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent4#att2" name="centerName" type="string" db:column="centername"/>
   </Entity>
-  <Entity gr:x="-55" gr:y="565" id="ent5" name="Schedule" duration="persistent" attributeOrder="ent5#att5 ent5#att12 ent5#att17 ent5#att18 ent5#att21 ent5#att19 ent5#att20 ent5#att13 ent5#att11 ent5#att37 ent5#att39 ent5#att40" db:database="db1" db:table="schedule">
+  <Entity gr:x="-55" gr:y="565" id="ent5" name="Schedule" duration="persistent" attributeOrder="ent5#att5 ent5#att12 ent5#att25 ent5#att17 ent5#att18 ent5#att21 ent5#att19 ent5#att20 ent5#att13 ent5#att11 ent5#att37 ent5#att39 ent5#att40" db:database="db1" db:table="schedule">
     <Attribute id="ent5#att5" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent5#att12" name="description" type="text" db:column="description"/>
     <Attribute id="ent5#att17" name="state" type="string" derivationQuery="simpleImported::Self.rel6#role11.ent9#att16"/>
@@ -72,6 +72,7 @@
     <Attribute id="ent5#att37" name="date" db:column="date" type="timestamp" key="false"/>
     <Attribute id="ent5#att39" name="details" type="text" db:column="details"/>
     <Attribute id="ent5#att40" name="dayhourOid" type="integer" derivationQuery="simpleImported::Self.rel11#role21.ent10#att49"/>
+    <Attribute id="ent5#att25" name="stateOid" type="integer" derivationQuery="simpleImported::Self.rel6#role11.ent9#att14"/>
   </Entity>
   <Entity gr:x="-215" gr:y="390" id="ent7" name="PatientData" duration="persistent" attributeOrder="ent7#att7 ent7#att8" db:database="db1" db:table="patientdata">
     <Attribute id="ent7#att7" key="true" name="oid" type="integer" db:column="oid"/>
