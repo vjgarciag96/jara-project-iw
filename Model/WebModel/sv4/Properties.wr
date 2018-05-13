@@ -1,14 +1,16 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="patient" protected="true" homePage="sv4#page6" landmarks="sv4#lou2 sv4#page14 sv4#page6">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="patient" protected="true" homePage="sv4#page6" landmarks="sv4#page6 sv4#page14 sv4#page17 sv4#lou2">
   <OperationUnits>
-    <CreateUnit gr:x="695" gr:y="-15" id="sv4#cru2" name="CreateUnit" entity="ent5">
+    <CreateUnit gr:x="470" gr:y="-90" id="sv4#cru2" name="CreateUnit" entity="ent5">
       <KOLink id="sv4#cru2#kln6" to="sv4#page6#mssu6" gr:bendpoints="53,286,418,26">
         <LinkParameter id="sv4#cru2#kln6#par47" name="Failed creating data_Shown Messages" target="sv4#page6#mssu6.shownMessages" sourceValue="Error registrando la cita"/>
       </KOLink>
-      <OKLink id="sv4#cru2#oln5" to="sv4#seu12" gr:bendpoints="69,-86,-106,-46">
-        <LinkParameter id="sv4#cru2#oln5#par58" name="oid_PASSING" source="ent5#att5Array" passing="true"/>
+      <OKLink id="sv4#cru2#oln46" name="OKFlow46" to="sv4#seu12">
+        <LinkParameter id="sv4#cru2#oln46#par205" name="D&#237;a - Hora_PASSING_KeyCondition15 [oid]" sourceLinkParameter="sv4#switch2#oln20#par19" target="sv4#seu12#su25#kcond15.ent10#att49"/>
+        <LinkParameter id="sv4#cru2#oln46#par206" name="staffOid_PASSING_staffOid" sourceLinkParameter="sv4#switch2#oln20#par21" target="sv4#seu12#su25#acond22"/>
+        <LinkParameter id="sv4#cru2#oln46#par213" name="patientOid_PASSING" sourceLinkParameter="sv4#switch2#oln20#par20" passing="true"/>
       </OKLink>
     </CreateUnit>
-    <LogoutUnit id="sv4#lou2" name="Cerrar Sesi&#243;n" gr:x="1250" gr:y="40" siteView="sv1" landmark="true"/>
+    <LogoutUnit id="sv4#lou2" name="Cerrar Sesi&#243;n" gr:x="1405" gr:y="40" siteView="sv1" landmark="true"/>
     <DeleteUnit gr:x="785" gr:y="670" id="sv4#dlu4" name="Anular Cita" entity="ent5">
       <Selector id="sv4#dlu4#su14" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#dlu4#su14#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
@@ -19,28 +21,35 @@
       <OKLink id="sv4#dlu4#oln3" name="OKFlow3" to="sv4#mfu5">
         <LinkParameter id="sv4#dlu4#oln3#par5" name="ScheduleToTimeTableItem.oid_PASSING_KeyCondition8 [oid]" sourceLinkParameter="sv4#page6#pwu4#ln8#par22" target="sv4#mfu5#su29#kcond18.ent10#att49"/>
         <LinkParameter id="sv4#dlu4#oln3#par23" name="false_scheduled" sourceValue="false" target="sv4#mfu5.ent10#att51"/>
+        <LinkParameter id="sv4#dlu4#oln3#par266" name="patientOid_PASSING" sourceLinkParameter="sv4#page6#pwu4#ln8#par265" passing="true"/>
       </OKLink>
     </DeleteUnit>
-    <ModifyUnit gr:x="1100" gr:y="-10" id="sv4#mfu3" name="Reservar hora" entity="ent10">
+    <ModifyUnit gr:x="980" gr:y="10" id="sv4#mfu3" name="Reservar hora" entity="ent10">
       <Selector id="sv4#mfu3#su23" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#mfu3#su23#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="sv4#mfu3#oln15" name="OKFlow15" to="sv4#page6" automaticCoupling="true"/>
+      <OKLink id="sv4#mfu3#oln44" name="OKFlow34" to="sv4#seu4">
+        <LinkParameter id="sv4#mfu3#oln44#par231" name="patientOid_PASSING" sourceLinkParameter="sv4#seu12#oln2#par215" passing="true"/>
+        <LinkParameter id="sv4#mfu3#oln44#par262" name="patientOid_PASSING_KeyCondition17 [oid]" sourceLinkParameter="sv4#seu12#oln2#par215" target="sv4#seu4#su34#kcond17.userOID"/>
+        <LinkParameter id="sv4#mfu3#oln44#par263" name="dayhour_PASSING" sourceLinkParameter="sv4#seu12#oln2#par57" passing="true"/>
+      </OKLink>
     </ModifyUnit>
     <ModifyUnit id="sv4#mfu5" name="Eliminar hora" gr:x="765" gr:y="970" entity="ent10">
       <Selector id="sv4#mfu5#su29" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#mfu5#su29#kcond18" name="KeyCondition8" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="sv4#mfu5#oln4" name="OKFlow3" to="sv4#page6#mssu6" gr:bendpoints="297,-205,-78,310">
-        <LinkParameter id="sv4#mfu5#oln4#par52" name="Cita eliminada correctamente_Shown Messages" sourceValue="Cita eliminada correctamente" target="sv4#page6#mssu6.shownMessages"/>
+      <OKLink id="sv4#mfu5#oln4" name="OKFlow3" to="sv4#seu16" gr:bendpoints="158,136,-172,121">
+        <LinkParameter id="sv4#mfu5#oln4#par267" name="patientOid_PASSING" sourceLinkParameter="sv4#dlu4#oln3#par266" passing="true"/>
+        <LinkParameter id="sv4#mfu5#oln4#par282" name="patientOid_PASSING_KeyCondition28 [oid]" sourceLinkParameter="sv4#dlu4#oln3#par266" target="sv4#seu16#su44#kcond28.userOID"/>
       </OKLink>
       <KOLink id="sv4#mfu5#kln3" name="KOFlow3" to="sv4#page6#mssu6" gr:bendpoints="400,-177,25,338">
         <LinkParameter id="sv4#mfu5#kln3#par55" name="Error eliminando cita_Shown Messages" sourceValue="Error eliminando cita" target="sv4#page6#mssu6.shownMessages"/>
       </KOLink>
     </ModifyUnit>
-    <SelectorUnit gr:x="890" gr:y="-55" id="sv4#seu12" name="Timetable" entity="ent10">
+    <SelectorUnit gr:x="680" gr:y="-55" id="sv4#seu12" name="Timetable" entity="ent10">
       <Selector id="sv4#seu12#su25" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#seu12#su25#kcond15" name="KeyCondition15" predicate="in" implied="false"/>
+        <AttributesCondition id="sv4#seu12#su25#acond22" name="staffOid" predicate="eq" booleanOperator="or" implied="false" attributes="ent10#att53"/>
       </Selector>
       <OKLink id="sv4#seu12#oln2" name="OKFlow2" to="sv4#mfu3">
         <LinkParameter id="sv4#seu12#oln2#par42" name="day_day" source="ent10#att52Array" target="sv4#mfu3.ent10#att52"/>
@@ -48,7 +57,7 @@
         <LinkParameter id="sv4#seu12#oln2#par44" name="true_scheduled" sourceValue="true" target="sv4#mfu3.ent10#att51"/>
         <LinkParameter id="sv4#seu12#oln2#par46" name="starttime_starttime" source="ent10#att50Array" target="sv4#mfu3.ent10#att50"/>
         <LinkParameter id="sv4#seu12#oln2#par57" name="dayhour_PASSING" source="ent10#att36Array" passing="true"/>
-        <LinkParameter id="sv4#seu12#oln2#par59" name="oid_PASSING" sourceLinkParameter="sv4#cru2#oln5#par58" passing="true"/>
+        <LinkParameter id="sv4#seu12#oln2#par215" name="patientOid_PASSING" sourceLinkParameter="sv4#cru2#oln46#par213" passing="true"/>
       </OKLink>
     </SelectorUnit>
     <SelectorUnit gr:x="-5" gr:y="-15" id="sv4#seu10" name="Schedule" entity="ent5">
@@ -68,12 +77,24 @@
       <MathVariable id="sv4#mathu2#mathv2" name="schedule"/>
       <OKLink id="sv4#mathu2#oln19" name="OKFlow19" to="sv4#switch2">
         <LinkParameter id="sv4#mathu2#oln19#par15" name="Result_Switch" source="result" target="sv4#switch2.switch"/>
+        <LinkParameter id="sv4#mathu2#oln19#par3" name="Descripci&#243;n_PASSING" sourceLinkParameter="sv4#seu10#oln18#par48" passing="true"/>
+        <LinkParameter id="sv4#mathu2#oln19#par4" name="D&#237;a - Hora_PASSING" sourceLinkParameter="sv4#seu10#oln18#par49" passing="true"/>
+        <LinkParameter id="sv4#mathu2#oln19#par9" name="patientOid_PASSING" sourceLinkParameter="sv4#seu10#oln18#par51" passing="true"/>
+        <LinkParameter id="sv4#mathu2#oln19#par11" name="staffOid_PASSING" sourceLinkParameter="sv4#seu10#oln18#par53" passing="true"/>
       </OKLink>
     </MathUnit>
     <SwitchUnit gr:x="465" gr:y="55" id="sv4#switch2" name="IsPossible?">
       <OKLink id="sv4#switch2#oln20" name="OKFlow20" to="sv4#cru2" code="true">
         <LinkParameter id="sv4#switch2#oln20#par94" name="Sin descripci&#243;n_details" sourceValue="Sin descripci&#243;n" target="sv4#cru2.ent5#att39"/>
         <LinkParameter id="sv4#switch2#oln20#par108" name="2_ScheduleState.oid(ScheduleToScheduleState)" sourceValue="2" target="sv4#cru2.rel6#role11.ent9#att14"/>
+        <LinkParameter id="sv4#switch2#oln20#par13" name="Descripci&#243;n_PASSING" sourceLinkParameter="sv4#mathu2#oln19#par3" passing="true"/>
+        <LinkParameter id="sv4#switch2#oln20#par19" name="D&#237;a - Hora_PASSING" sourceLinkParameter="sv4#mathu2#oln19#par4" passing="true"/>
+        <LinkParameter id="sv4#switch2#oln20#par20" name="patientOid_PASSING" sourceLinkParameter="sv4#mathu2#oln19#par9" passing="true"/>
+        <LinkParameter id="sv4#switch2#oln20#par21" name="staffOid_PASSING" sourceLinkParameter="sv4#mathu2#oln19#par11" passing="true"/>
+        <LinkParameter id="sv4#switch2#oln20#par24" name="Descripci&#243;n_PASSING_description" sourceLinkParameter="sv4#mathu2#oln19#par3" target="sv4#cru2.ent5#att12"/>
+        <LinkParameter id="sv4#switch2#oln20#par34" name="D&#237;a - Hora_PASSING_TimeTableItem.oid(ScheduleToTimeTableItem)" sourceLinkParameter="sv4#mathu2#oln19#par4" target="sv4#cru2.rel11#role21.ent10#att49"/>
+        <LinkParameter id="sv4#switch2#oln20#par56" name="patientOid_PASSING_User.oid(SchedulePatient)" sourceLinkParameter="sv4#mathu2#oln19#par9" target="sv4#cru2.rel5#role9.userOID"/>
+        <LinkParameter id="sv4#switch2#oln20#par60" name="staffOid_PASSING_User.oid(ScheduleStaff)" sourceLinkParameter="sv4#mathu2#oln19#par11" target="sv4#cru2.rel10#role20.userOID"/>
       </OKLink>
       <OKLink id="sv4#switch2#oln21" name="OKFlow21" to="sv4#page6#mssu6" code="false">
         <LinkParameter id="sv4#switch2#oln21#par17" name="No puedes reservar m&#225;s de 1 cita por semana_Shown Messages" sourceValue="No puedes reservar m&#225;s de 1 cita por semana" target="sv4#page6#mssu6.shownMessages"/>
@@ -81,5 +102,72 @@
       <Case value="true"/>
       <Case value="false"/>
     </SwitchUnit>
+    <StringsFunctionUnit gr:x="1195" gr:y="-130" id="sv4#sfu5" name="Mensaje Cita" mode="concatStrings" substringType="byIndex" substringMode="afterSeparator" encryptAlgorithm="com.webratio.rtx.core.DES3UnicodeCryptImplementation">
+      <String id="sv4#sfu5#str41" name="Estimado" value="&lt;p&gt;Estimado "/>
+      <String id="sv4#sfu5#str42" name="Nombre"/>
+      <String id="sv4#sfu5#str43" name="Espacio" value=" "/>
+      <String id="sv4#sfu5#str44" name="Apellidos"/>
+      <String id="sv4#sfu5#str45" name="Dos Puntos" value=":&lt;/p&gt;"/>
+      <String id="sv4#sfu5#str46" name="Informaci&#243;n" value="Tiene reservada cita esta semana para "/>
+      <String id="sv4#sfu5#str47" name="Horario"/>
+      <String id="sv4#sfu5#str48" name="Salto de Linea" value="&lt;/p&gt;"/>
+      <String id="sv4#sfu5#str49" name="Saludos" value="&lt;p&gt;Saludos, SES&lt;/p&gt;"/>
+      <OKLink id="sv4#sfu5#oln49" name="OKFlow49" to="sv4#mlu3">
+        <LinkParameter id="sv4#sfu5#oln49#par257" name="Result String_Mail - Body" source="resultString" target="sv4#mlu3.body"/>
+        <LinkParameter id="sv4#sfu5#oln49#par258" name="Reserva Citas SES_Mail - Subject" sourceValue="Reserva Citas SES" target="sv4#mlu3.subject"/>
+        <LinkParameter id="sv4#sfu5#oln49#par259" name="email_PASSING_Mail - To" sourceLinkParameter="sv4#seu4#oln47#par256" target="sv4#mlu3.to"/>
+      </OKLink>
+    </StringsFunctionUnit>
+    <SelectorUnit gr:x="1010" gr:y="-145" id="sv4#seu4" name="Paciente" entity="User">
+      <Selector id="sv4#seu4#su34" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#seu4#su34#kcond17" name="KeyCondition17" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#seu4#oln47" name="OKFlow47" to="sv4#sfu5">
+        <LinkParameter id="sv4#seu4#oln47#par234" name="apellidos_Apellidos" source="User#att35Array" target="sv4#sfu5#str44"/>
+        <LinkParameter id="sv4#seu4#oln47#par247" name="nombre_Nombre" source="User#att34Array" target="sv4#sfu5#str42"/>
+        <LinkParameter id="sv4#seu4#oln47#par256" name="email_PASSING" source="emailArray" passing="true"/>
+        <LinkParameter id="sv4#seu4#oln47#par264" name="dayhour_PASSING_Horario" sourceLinkParameter="sv4#mfu3#oln44#par263" target="sv4#sfu5#str47"/>
+      </OKLink>
+    </SelectorUnit>
+    <MailUnit gr:x="1230" gr:y="30" id="sv4#mlu3" name="Enviar Cita" format="html" smtpServer="smtp1">
+      <OKLink id="sv4#mlu3#oln50" name="OKFlow50" to="sv4#page6#mssu4">
+        <LinkParameter id="sv4#mlu3#oln50#par260" name="Cita reservada_Shown Messages" sourceValue="Cita reservada" target="sv4#page6#mssu4.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv4#mlu3#kln21" name="KOFlow21" to="sv4#page6#mssu4" gr:bendpoints="-63,103,87,-87">
+        <LinkParameter id="sv4#mlu3#kln21#par261" name="Error reservando cita_Shown Messages" sourceValue="Error reservando cita" target="sv4#page6#mssu4.shownMessages"/>
+      </KOLink>
+    </MailUnit>
+    <StringsFunctionUnit gr:x="1020" gr:y="1045" id="sv4#sfu7" name="Mensaje Anulaci&#243;n" mode="concatStrings" substringType="byIndex" substringMode="afterSeparator" encryptAlgorithm="com.webratio.rtx.core.DES3UnicodeCryptImplementation">
+      <String id="sv4#sfu7#str59" name="Estimado" value="&lt;p&gt;Estimado "/>
+      <String id="sv4#sfu7#str60" name="Nombre"/>
+      <String id="sv4#sfu7#str61" name="Espacio" value=" "/>
+      <String id="sv4#sfu7#str62" name="Apellidos"/>
+      <String id="sv4#sfu7#str63" name="Coma" value=",&lt;/p&gt;"/>
+      <String id="sv4#sfu7#str64" name="Informaci&#243;n" value="&lt;p&gt;Has anulado la cita que ten&#237;as reservada para esta semana&lt;/p&gt;"/>
+      <String id="sv4#sfu7#str65" name="Saludos" value="&lt;p&gt;Saludos, SES&lt;/p&gt;"/>
+      <OKLink id="sv4#sfu7#oln52" name="OKFlow52" to="sv4#mlu4">
+        <LinkParameter id="sv4#sfu7#oln52#par286" name="Result String_Mail - Body" source="resultString" target="sv4#mlu4.body"/>
+        <LinkParameter id="sv4#sfu7#oln52#par287" name="Anulaci&#243;n Cita SES_Mail - Subject" sourceValue="Anulaci&#243;n Cita SES" target="sv4#mlu4.subject"/>
+        <LinkParameter id="sv4#sfu7#oln52#par288" name="email_PASSING_Mail - To" sourceLinkParameter="sv4#seu16#oln51#par285" target="sv4#mlu4.to"/>
+      </OKLink>
+    </StringsFunctionUnit>
+    <SelectorUnit gr:x="885" gr:y="1155" id="sv4#seu16" name="Paciente" entity="User">
+      <Selector id="sv4#seu16#su44" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#seu16#su44#kcond28" name="KeyCondition28" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#seu16#oln51" name="OKFlow51" to="sv4#sfu7">
+        <LinkParameter id="sv4#seu16#oln51#par283" name="apellidos_Apellidos" source="User#att35Array" target="sv4#sfu7#str62"/>
+        <LinkParameter id="sv4#seu16#oln51#par284" name="nombre_Nombre" source="User#att34Array" target="sv4#sfu7#str60"/>
+        <LinkParameter id="sv4#seu16#oln51#par285" name="email_PASSING" source="emailArray" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <MailUnit gr:x="1320" gr:y="1130" id="sv4#mlu4" name="Correo Anulaci&#243;n" format="html" smtpServer="smtp1">
+      <OKLink id="sv4#mlu4#oln53" name="OKFlow53" to="sv4#page6#mssu6">
+        <LinkParameter id="sv4#mlu4#oln53#par289" name="Cita anulada_Shown Messages" sourceValue="Cita anulada" target="sv4#page6#mssu6.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv4#mlu4#kln22" name="KOFlow22" to="sv4#page6#mssu6" gr:bendpoints="-110,-347,80,353">
+        <LinkParameter id="sv4#mlu4#kln22#par290" name="Error anulando cita_Shown Messages" sourceValue="Error anulando cita" target="sv4#page6#mssu6.shownMessages"/>
+      </KOLink>
+    </MailUnit>
   </OperationUnits>
 </SiteView>

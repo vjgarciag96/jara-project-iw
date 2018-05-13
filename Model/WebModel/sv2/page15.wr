@@ -1,0 +1,70 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="45" gr:y="455" id="sv2#page15" name="Actualizar Paciente">
+  <ContentUnits>
+    <SelectorUnit id="sv2#page15#seu18" name="UserOid" gr:x="0" gr:y="0" entity="User">
+      <Selector id="sv2#page15#seu18#su35" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page15#seu18#su35#kcond20" name="oid" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page15#seu18#ln53" name="Flow53" to="sv2#page15#enu4" type="transport" validate="true">
+        <LinkParameter id="sv2#page15#seu18#ln53#par194" name="password_Contrase&#241;a" source="passwordArray" target="sv2#page15#enu4#fld11_slot"/>
+        <LinkParameter id="sv2#page15#seu18#ln53#par195" name="email_Correo Electr&#243;nico" source="emailArray" target="sv2#page15#enu4#fld12_slot"/>
+        <LinkParameter id="sv2#page15#seu18#ln53#par196" name="UserToStaffData.oid_M&#233;dico asignado - Preselection" source="rel2#role3_userOIDArray" target="sv2#page15#enu4#sfld6_presel"/>
+        <LinkParameter id="sv2#page15#seu18#ln53#par197" name="apellidos_Apellidos" source="User#att35Array" target="sv2#page15#enu4#fld35_slot"/>
+        <LinkParameter id="sv2#page15#seu18#ln53#par198" name="nombre_Nombre" source="User#att34Array" target="sv2#page15#enu4#fld34_slot"/>
+        <LinkParameter id="sv2#page15#seu18#ln53#par214" name="userName_Nombre de Usuario" source="userNameArray" target="sv2#page15#enu4#fld10_slot"/>
+        <LinkParameter id="sv2#page15#seu18#ln53#par226" name="oid_PASSING" source="userOIDArray" passing="true"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit gr:x="45" gr:y="160" id="sv2#page15#enu4" name="Actualizar Paciente" linkOrder="sv2#page15#enu4#ln54">
+      <Field id="sv2#page15#enu4#fld10" name="Nombre de Usuario" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page15#enu4#fld11" name="Contrase&#241;a" type="password" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page15#enu4#fld12" name="Correo Electr&#243;nico" type="string" modifiable="true" preloaded="true"/>
+      <SelectionField id="sv2#page15#enu4#sfld6" name="M&#233;dico asignado" type="string"/>
+      <Field id="sv2#page15#enu4#fld34" name="Nombre" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page15#enu4#fld35" name="Apellidos" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv2#page15#enu4#ln54" name="Actualizar" to="sv2#mfu2" type="normal" validate="true">
+        <LinkParameter id="sv2#page15#enu4#ln54#par199" name="Apellidos_apellidos" source="sv2#page15#enu4#fld35" target="sv2#mfu2.User#att35"/>
+        <LinkParameter id="sv2#page15#enu4#ln54#par200" name="Correo Electr&#243;nico_email" source="sv2#page15#enu4#fld12" target="sv2#mfu2.email"/>
+        <LinkParameter id="sv2#page15#enu4#ln54#par201" name="Nombre_nombre" source="sv2#page15#enu4#fld34" target="sv2#mfu2.User#att34"/>
+        <LinkParameter id="sv2#page15#enu4#ln54#par202" name="Contrase&#241;a_password" source="sv2#page15#enu4#fld11" target="sv2#mfu2.password"/>
+        <LinkParameter id="sv2#page15#enu4#ln54#par204" name="Nombre de Usuario_userName" source="sv2#page15#enu4#fld10" target="sv2#mfu2.userName"/>
+        <LinkParameter id="sv2#page15#enu4#ln54#par225" name="M&#233;dico asignado_User.oid(UserToUser1)" source="sv2#page15#enu4#sfld6" target="sv2#mfu2.rel2#role3.userOID"/>
+        <LinkParameter id="sv2#page15#enu4#ln54#par227" name="oid_PASSING_KeyCondition5 [oid]" sourceLinkParameter="sv2#page15#seu18#ln53#par226" target="sv2#mfu2#su5#kcond5.userOID"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="sv2#page15#seu20" name="StaffSelector" gr:x="165" gr:y="5" entity="User">
+      <Selector id="sv2#page15#seu20#su37" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#page15#seu20#su37#acond23" name="group" predicate="eq" booleanOperator="or" implied="false" attributes="User#att26" value="2"/>
+      </Selector>
+      <Link id="sv2#page15#seu20#ln50" name="Flow50" to="sv2#page15#enu4" type="transport" validate="true">
+        <LinkParameter id="sv2#page15#seu20#ln50#par183" name="userName_M&#233;dico asignado [label]" source="userNameArray" target="sv2#page15#enu4#sfld6_label"/>
+        <LinkParameter id="sv2#page15#seu20#ln50#par184" name="oid_M&#233;dico asignado [output]" source="userOIDArray" target="sv2#page15#enu4#sfld6_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page15#enu4">
+          <layout:Field field="sv2#page15#enu4#fld10"/>
+          <layout:Field field="sv2#page15#enu4#fld11"/>
+          <layout:Field field="sv2#page15#enu4#fld12"/>
+          <layout:Field field="sv2#page15#enu4#sfld6"/>
+          <layout:Field field="sv2#page15#enu4#fld34"/>
+          <layout:Field field="sv2#page15#enu4#fld35"/>
+          <layout:Link link="sv2#page15#enu4#ln54"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-450" gr:y="190" id="sv4#page14" name="Mi Historial" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-450" gr:y="230" id="sv4#page14" name="Mi Historial" landmark="true">
   <ContentUnits>
     <PowerIndexUnit gr:x="25" gr:y="170" id="sv4#page14#pwu2" name="Historial" sortable="true" checkable="false" useCountQuery="false" entity="ent5" displayAttributes="ent5#att12 ent5#att17 ent5#att20 ent5#att11" linkOrder="sv4#page14#pwu2#ln18">
       <Link id="sv4#page14#pwu2#ln18" name="Ver diagnostico" to="sv4#page14#dau3" automaticCoupling="true" type="normal" validate="true"/>
@@ -50,6 +50,34 @@
           <layout:Attribute attribute="ent5#att39"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

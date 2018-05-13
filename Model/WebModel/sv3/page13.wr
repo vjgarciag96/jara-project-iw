@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="75" gr:y="445" id="sv3#page13" name="Historial Pacientes">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="120" gr:y="755" id="sv3#page13" name="Historial Pacientes">
   <ContentUnits>
     <SelectorUnit gr:x="0" gr:y="0" id="sv3#page13#seu11" name="Historial Paciente" entity="ent5">
       <Selector id="sv3#page13#seu11#su18" defaultPolicy="fill" booleanOperator="and">

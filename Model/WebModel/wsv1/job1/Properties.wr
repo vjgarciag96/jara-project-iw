@@ -1,0 +1,28 @@
+<Job xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="200" gr:y="85" id="wsv1#job1" name="Reiniciar Horarios">
+  <OperationUnits>
+    <InitJobUnit id="wsv1#job1#iju1" name="Init Job" gr:x="0" gr:y="25">
+      <OKLink id="wsv1#job1#iju1#oln12" name="OKFlow12" to="wsv1#job1#seu13" automaticCoupling="true"/>
+    </InitJobUnit>
+    <SelectorUnit gr:x="200" gr:y="0" id="wsv1#job1#seu13" name="Horarios" entity="ent10">
+      <Selector id="wsv1#job1#seu13#su24" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="wsv1#job1#seu13#su24#acond10" name="AttCondition10" predicate="eq" booleanOperator="or" implied="false" attributes="ent10#att51" value="true"/>
+      </Selector>
+      <OKLink id="wsv1#job1#seu13#oln14" name="OKFlow14" to="wsv1#job1#lpu1">
+        <LinkParameter id="wsv1#job1#seu13#oln14#par89" name="TimeTableItemToSchedule.oid_Input Array" source="ent10#att49Array" target="wsv1#job1#lpu1.array"/>
+      </OKLink>
+    </SelectorUnit>
+    <LoopUnit gr:x="20" gr:y="205" id="wsv1#job1#lpu1" name="BucleHorarios">
+      <OKLink id="wsv1#job1#lpu1#oln17" name="OKFlow17" to="wsv1#job1#mfu6" gr:bendpoints="141,81,-164,51" code="next">
+        <LinkParameter id="wsv1#job1#lpu1#oln17#par91" name="Next Element_KeyCondition2 [oid]" source="next" target="wsv1#job1#mfu6#su27#kcond2.ent10#att49"/>
+        <LinkParameter id="wsv1#job1#lpu1#oln17#par106" name="false_scheduled" sourceValue="false" target="wsv1#job1#mfu6.ent10#att51"/>
+      </OKLink>
+      <SecondaryArray id="wsv1#job1#lpu1#lsa1" name="oid"/>
+    </LoopUnit>
+    <ModifyUnit gr:x="420" gr:y="240" id="wsv1#job1#mfu6" name="ModificarHorario" entity="ent10">
+      <Selector id="wsv1#job1#mfu6#su27" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="wsv1#job1#mfu6#su27#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="wsv1#job1#mfu6#oln22" name="OKFlow22" to="wsv1#job1#lpu1" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</Job>

@@ -1,33 +1,51 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="admin" homePage="sv2#page9" landmarks="sv2#page2 sv2#lou1 sv2#page10 sv2#page11 sv2#page12 sv2#page9">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="admin" homePage="sv2#page9" landmarks="sv2#page9 sv2#page11 sv2#page12 sv2#page2 sv2#page10 sv2#scju2 sv2#lou1">
   <OperationUnits>
-    <CreateUnit gr:x="850" gr:y="-275" id="sv2#cru1" name="CreateUser" entity="User">
-      <KOLink id="sv2#cru1#kln1" to="sv2#page2#mssu1" gr:bendpoints="-183,89,62,-131">
-        <LinkParameter id="sv2#cru1#kln1#par6" name="Failed creating data_Shown Messages" sourceValue="Error creating User" target="sv2#page2#mssu1.shownMessages"/>
+    <CreateUnit gr:x="560" gr:y="-440" id="sv2#cru1" name="CreateUser" entity="User">
+      <KOLink id="sv2#cru1#kln14" name="KOFlow14" to="sv2#page2#mssu1">
+        <LinkParameter id="sv2#cru1#kln14#par131" name="Error creando m&#233;dico_Shown Messages" sourceValue="Error creando m&#233;dico" target="sv2#page2#mssu1.shownMessages"/>
       </KOLink>
-      <OKLink id="sv2#cru1#oln1" to="sv2#page2#mssu1" gr:bendpoints="-80,166,165,-54">
-        <LinkParameter id="sv2#cru1#oln1#par7" name="Data created correctly_Shown Messages" sourceValue="User created successfully" target="sv2#page2#mssu1.shownMessages"/>
+      <OKLink id="sv2#cru1#oln33" name="OKFlow33" to="sv2#cru7" gr:bendpoints="173,-8,-62,-83">
+        <LinkParameter id="sv2#cru1#oln33#par139" name="oid_PASSING" source="userOIDArray" passing="true"/>
+        <LinkParameter id="sv2#cru1#oln33#par219" name="Departamento_PASSING_Department.oid(UserToDepartament)" sourceLinkParameter="sv2#page2#enu2#ln2#par218" target="sv2#cru7.rel7#role13.ent3#att3"/>
+        <LinkParameter id="sv2#cru1#oln33#par220" name="oid_staffId" source="userOIDArray" target="sv2#cru7.ent8#att10"/>
+        <LinkParameter id="sv2#cru1#oln33#par221" name="oid_User.oid(StaffDataToUser)" source="userOIDArray" target="sv2#cru7.rel3#role6.userOID"/>
+        <LinkParameter id="sv2#cru1#oln33#par28" name="email_PASSING" source="emailArray" passing="true"/>
+        <LinkParameter id="sv2#cru1#oln33#par33" name="apellidos_PASSING" source="User#att35Array" passing="true"/>
+        <LinkParameter id="sv2#cru1#oln33#par40" name="nombre_PASSING" source="User#att34Array" passing="true"/>
+        <LinkParameter id="sv2#cru1#oln33#par92" name="password_PASSING" source="passwordArray" passing="true"/>
+        <LinkParameter id="sv2#cru1#oln33#par109" name="userName_PASSING" source="userNameArray" passing="true"/>
       </OKLink>
     </CreateUnit>
-    <DeleteUnit gr:x="80" gr:y="-325" id="sv2#dlu1" name="DeleteUnit" entity="User">
+    <DeleteUnit gr:x="5" gr:y="-305" id="sv2#dlu1" name="DeleteUnit" entity="User">
       <Selector id="sv2#dlu1#su1" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#dlu1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="sv2#dlu1#oln11" to="sv2#page9#mssu10" gr:bendpoints="-44,173,176,53;164,202,-16,47">
+      <OKLink id="sv2#dlu1#oln11" to="sv2#page9#mssu10" gr:bendpoints="146,108,51,-122">
         <LinkParameter id="sv2#dlu1#oln11#par86" name="Data deleted correctly_Shown Messages" target="sv2#page9#mssu10.shownMessages" sourceValue="User deleted successfully"/>
       </OKLink>
       <KOLink id="sv2#dlu1#kln12" to="sv2#page9#mssu10" gr:bendpoints="-123,119,167,-81">
         <LinkParameter id="sv2#dlu1#kln12#par87" name="Failed deleting data_Shown Messages" target="sv2#page9#mssu10.shownMessages" sourceValue="Failed deleting data"/>
       </KOLink>
     </DeleteUnit>
-    <ModifyUnit gr:x="315" gr:y="495" id="sv2#mfu2" name="UpdateUser" entity="User">
+    <ModifyUnit gr:x="85" gr:y="910" id="sv2#mfu2" name="Actualizar Usuario" entity="User">
       <Selector id="sv2#mfu2#su5" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#mfu2#su5#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
       </Selector>
+      <OKLink id="sv2#mfu2#oln39" name="OKFlow39" to="sv2#page9#mssu10">
+        <LinkParameter id="sv2#mfu2#oln39#par209" name="Usuario actualizado correctamente_Shown Messages" sourceValue="Usuario actualizado correctamente" target="sv2#page9#mssu10.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#mfu2#kln16" name="KOFlow16" to="sv2#page9#mssu10" gr:bendpoints="-18,-458,-13,437">
+        <LinkParameter id="sv2#mfu2#kln16#par210" name="Error actualizando usuario_Shown Messages" sourceValue="Error actualizando usuario" target="sv2#page9#mssu10.shownMessages"/>
+      </KOLink>
     </ModifyUnit>
-    <LogoutUnit gr:x="975" gr:y="405" id="sv2#lou1" name="LogoutAdmin" siteView="sv1" landmark="true"/>
-    <CreateUnit gr:x="585" gr:y="365" id="sv2#cru3" name="CreatePatient" entity="User">
-      <OKLink id="sv2#cru3#oln6" name="OKFlow6" to="sv2#page10#mssu7" gr:bendpoints="8,-86,-112,49">
-        <LinkParameter id="sv2#cru3#oln6#par70" name="Patient successfuly created_Shown Messages" sourceValue="Patient successfully created" target="sv2#page10#mssu7.shownMessages"/>
+    <LogoutUnit gr:x="975" gr:y="405" id="sv2#lou1" name="Cerrar Sesi&#243;n" siteView="sv1" landmark="true"/>
+    <CreateUnit gr:x="515" gr:y="410" id="sv2#cru3" name="CreatePatient" entity="User">
+      <OKLink id="sv2#cru3#oln6" name="OKFlow6" to="sv2#sfu4" gr:bendpoints="109,74,-76,149">
+        <LinkParameter id="sv2#cru3#oln6#par171" name="apellidos_Apellidos" source="User#att35Array" target="sv2#sfu4#str31"/>
+        <LinkParameter id="sv2#cru3#oln6#par172" name="password_Contrase&#241;a" source="passwordArray" target="sv2#sfu4#str38"/>
+        <LinkParameter id="sv2#cru3#oln6#par173" name="nombre_Nombre" source="User#att34Array" target="sv2#sfu4#str29"/>
+        <LinkParameter id="sv2#cru3#oln6#par174" name="userName_Nombre de usuario" source="userNameArray" target="sv2#sfu4#str35"/>
+        <LinkParameter id="sv2#cru3#oln6#par175" name="email_PASSING" source="emailArray" passing="true"/>
       </OKLink>
       <KOLink id="sv2#cru3#kln7" name="KOFlow7" to="sv2#page10#mssu7" gr:bendpoints="107,-48,-13,87">
         <LinkParameter id="sv2#cru3#kln7#par71" name="Error creating patient_Shown Messages" sourceValue="Error creating patient" target="sv2#page10#mssu7.shownMessages"/>
@@ -35,18 +53,18 @@
     </CreateUnit>
     <CreateUnit gr:x="1810" gr:y="180" id="sv2#cru4" name="CreateMedicalCenter" entity="ent4">
       <KOLink id="sv2#cru4#kln8" to="sv2#page11#mssu8">
-        <LinkParameter id="sv2#cru4#kln8#par73" name="Failed creating data_Shown Messages" sourceValue="Error creating Medical Center" target="sv2#page11#mssu8.shownMessages"/>
+        <LinkParameter id="sv2#cru4#kln8#par73" name="Failed creating data_Shown Messages" sourceValue="Error creando centro m&#233;dico" target="sv2#page11#mssu8.shownMessages"/>
       </KOLink>
       <OKLink id="sv2#cru4#oln7" to="sv2#page11#mssu8" gr:bendpoints="-127,121,183,1">
-        <LinkParameter id="sv2#cru4#oln7#par74" name="Data created correctly_Shown Messages" sourceValue="Medical center successfully created" target="sv2#page11#mssu8.shownMessages"/>
+        <LinkParameter id="sv2#cru4#oln7#par74" name="Data created correctly_Shown Messages" sourceValue="Centro m&#233;dico creado con &#233;xito" target="sv2#page11#mssu8.shownMessages"/>
       </OKLink>
     </CreateUnit>
     <CreateUnit gr:x="1880" gr:y="540" id="sv2#cru5" name="CreateDepartment" entity="ent3">
       <KOLink id="sv2#cru5#kln9" to="sv2#page12#mssu9">
-        <LinkParameter id="sv2#cru5#kln9#par76" name="Failed creating data_Shown Messages" sourceValue="Error creating new Department" target="sv2#page12#mssu9.shownMessages"/>
+        <LinkParameter id="sv2#cru5#kln9#par76" name="Failed creating data_Shown Messages" sourceValue="Error creando departamento" target="sv2#page12#mssu9.shownMessages"/>
       </KOLink>
       <OKLink id="sv2#cru5#oln8" to="sv2#page12#mssu9" gr:bendpoints="-128,175,217,-5">
-        <LinkParameter id="sv2#cru5#oln8#par77" name="Data created correctly_Shown Messages" sourceValue="Department successfully created" target="sv2#page12#mssu9.shownMessages"/>
+        <LinkParameter id="sv2#cru5#oln8#par77" name="Data created correctly_Shown Messages" sourceValue="Departamento creado con &#233;xito" target="sv2#page12#mssu9.shownMessages"/>
       </OKLink>
     </CreateUnit>
     <DeleteUnit gr:x="1400" gr:y="435" id="sv2#dlu2" name="Delete Department" entity="ent3">
@@ -54,10 +72,10 @@
         <KeyCondition id="sv2#dlu2#su10#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv2#dlu2#oln9" name="OKFlow9" to="sv2#page12#mssu9">
-        <LinkParameter id="sv2#dlu2#oln9#par81" name="Department deleted successfully_Shown Messages" sourceValue="Department deleted successfully" target="sv2#page12#mssu9.shownMessages"/>
+        <LinkParameter id="sv2#dlu2#oln9#par81" name="Department deleted successfully_Shown Messages" sourceValue="Departamento eliminado con &#233;xito" target="sv2#page12#mssu9.shownMessages"/>
       </OKLink>
       <KOLink id="sv2#dlu2#kln10" name="KOFlow10" to="sv2#page12#mssu9" gr:bendpoints="128,87,53,-83">
-        <LinkParameter id="sv2#dlu2#kln10#par82" name="Error deleting department_Shown Messages" sourceValue="Error deleting department" target="sv2#page12#mssu9.shownMessages"/>
+        <LinkParameter id="sv2#dlu2#kln10#par82" name="Error deleting department_Shown Messages" sourceValue="Error eliminando departamento" target="sv2#page12#mssu9.shownMessages"/>
       </KOLink>
     </DeleteUnit>
     <DeleteUnit gr:x="1760" gr:y="10" id="sv2#dlu3" name="Delete Medical Center" entity="ent4">
@@ -65,11 +83,157 @@
         <KeyCondition id="sv2#dlu3#su11#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv2#dlu3#oln10" name="OKFlow10" to="sv2#page11#mssu8" gr:bendpoints="-199,27,96,-98">
-        <LinkParameter id="sv2#dlu3#oln10#par83" name="Medical center deleted successfully_Shown Messages" sourceValue="Medical center deleted successfully" target="sv2#page11#mssu8.shownMessages"/>
+        <LinkParameter id="sv2#dlu3#oln10#par83" name="Medical center deleted successfully_Shown Messages" sourceValue="Centro M&#233;dico eliminado correctamente" target="sv2#page11#mssu8.shownMessages"/>
       </OKLink>
       <KOLink id="sv2#dlu3#kln11" name="KOFlow11" to="sv2#page11#mssu8" gr:bendpoints="-155,82,140,-43">
-        <LinkParameter id="sv2#dlu3#kln11#par84" name="Error deleting Medical Center_Shown Messages" sourceValue="Error deleting Medical Center" target="sv2#page11#mssu8.shownMessages"/>
+        <LinkParameter id="sv2#dlu3#kln11#par84" name="Error deleting Medical Center_Shown Messages" sourceValue="Error eliminando centro m&#233;dico" target="sv2#page11#mssu8.shownMessages"/>
       </KOLink>
     </DeleteUnit>
+    <ScheduleJobUnit gr:x="275" gr:y="775" id="sv2#scju2" name="Reiniciar horarios y citas" schedulePolicy="now" job="wsv1#job1" landmark="true">
+      <OKLink id="sv2#scju2#oln23" name="OKFlow23" to="sv2#scju3" gr:bendpoints="149,129,-106,114"/>
+      <KOLink id="sv2#scju2#kln4" name="KOFlow4" to="sv2#page9#mssu10" gr:bendpoints="-49,-375,16,360">
+        <LinkParameter id="sv2#scju2#kln4#par93" name="Error reiniciando los horarios_Shown Messages" sourceValue="Error reiniciando los horarios" target="sv2#page9#mssu10.shownMessages"/>
+      </KOLink>
+    </ScheduleJobUnit>
+    <ScheduleJobUnit gr:x="585" gr:y="670" id="sv2#scju3" name="Reiniciar citas" schedulePolicy="now" job="wsv2#job2">
+      <OKLink id="sv2#scju3#oln28" name="OKFlow28" to="sv2#page9#mssu10">
+        <LinkParameter id="sv2#scju3#oln28#par113" name="Horarios y Citas reiniciadas correctamente_Shown Messages" sourceValue="Horarios y Citas reiniciadas correctamente" target="sv2#page9#mssu10.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#scju3#kln13" name="KOFlow13" to="sv2#page9#mssu10" gr:bendpoints="-178,-355,142,350">
+        <LinkParameter id="sv2#scju3#kln13#par118" name="Error reiniciando horarios y citas_Shown Messages" sourceValue="Error reiniciando citas" target="sv2#page9#mssu10.shownMessages"/>
+      </KOLink>
+    </ScheduleJobUnit>
+    <CreateUnit gr:x="915" gr:y="-20" id="sv2#cru6" name="Crear Horarios" entity="ent10">
+      <OKLink id="sv2#cru6#oln36" name="OKFlow36" to="sv2#lpu4" gr:bendpoints="55,-100,-25,100"/>
+      <KOLink id="sv2#cru6#kln15" name="KOFlow15" to="sv2#page2#mssu1" gr:bendpoints="-110,-1,140,34">
+        <LinkParameter id="sv2#cru6#kln15#par146" name="Error creando medico_Shown Messages" sourceValue="Error creando medico" target="sv2#page2#mssu1.shownMessages"/>
+      </KOLink>
+    </CreateUnit>
+    <SelectorUnit gr:x="1155" gr:y="-305" id="sv2#seu17" name="Crear horario" entity="ent1">
+      <OKLink id="sv2#seu17#oln35" name="OKFlow35" to="sv2#lpu4">
+        <LinkParameter id="sv2#seu17#oln35#par147" name="oid_PASSING_Input Array" target="sv2#lpu4.array" source="ent1#att24Array"/>
+        <LinkParameter id="sv2#seu17#oln35#par149" name="starttime_starttime" source="ent1#att23Array" target="sv2#lpu4#lsa7"/>
+        <LinkParameter id="sv2#seu17#oln35#par223" name="oid_PASSING" sourceLinkParameter="sv2#cru7#oln40#par222" passing="true"/>
+        <LinkParameter id="sv2#seu17#oln35#par31" name="email_PASSING" sourceLinkParameter="sv2#cru7#oln40#par29" passing="true"/>
+        <LinkParameter id="sv2#seu17#oln35#par123" name="apellidos_PASSING" sourceLinkParameter="sv2#cru7#oln40#par110" passing="true"/>
+        <LinkParameter id="sv2#seu17#oln35#par124" name="nombre_PASSING" sourceLinkParameter="sv2#cru7#oln40#par120" passing="true"/>
+        <LinkParameter id="sv2#seu17#oln35#par125" name="password_PASSING" sourceLinkParameter="sv2#cru7#oln40#par121" passing="true"/>
+        <LinkParameter id="sv2#seu17#oln35#par126" name="userName_PASSING" sourceLinkParameter="sv2#cru7#oln40#par122" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <LoopUnit gr:x="1085" gr:y="-170" id="sv2#lpu4" name="BucleCrearHorario">
+      <SecondaryArray id="sv2#lpu4#lsa7" name="starttime"/>
+      <OKLink id="sv2#lpu4#oln37" name="OKFlow37" to="sv2#cru6" code="next" gr:bendpoints="-140,76,-70,-99">
+        <LinkParameter id="sv2#lpu4#oln37#par150" name="Next Element (day)_day" source="next" target="sv2#cru6.ent10#att52"/>
+        <LinkParameter id="sv2#lpu4#oln37#par151" name="false_scheduled" sourceValue="false" target="sv2#cru6.ent10#att51"/>
+        <LinkParameter id="sv2#lpu4#oln37#par152" name="Next Element (starttime)_starttime" source="sv2#lpu4#lsa7" target="sv2#cru6.ent10#att50"/>
+        <LinkParameter id="sv2#lpu4#oln37#par224" name="oid_PASSING_User.oid(TimeTableItemToUser)" sourceLinkParameter="sv2#seu17#oln35#par223" target="sv2#cru6.rel13#role26.userOID"/>
+      </OKLink>
+      <OKLink id="sv2#lpu4#oln38" name="OKFlow38" to="sv2#sfu1" code="end">
+        <LinkParameter id="sv2#lpu4#oln38#par127" name="email_PASSING" sourceLinkParameter="sv2#seu17#oln35#par31" passing="true"/>
+        <LinkParameter id="sv2#lpu4#oln38#par145" name="password_PASSING" sourceLinkParameter="sv2#seu17#oln35#par125" passing="true"/>
+        <LinkParameter id="sv2#lpu4#oln38#par148" name="userName_PASSING" sourceLinkParameter="sv2#seu17#oln35#par126" passing="true"/>
+        <LinkParameter id="sv2#lpu4#oln38#par166" name="apellidos_PASSING_Apellidos" sourceLinkParameter="sv2#seu17#oln35#par123" target="sv2#sfu1#str18"/>
+        <LinkParameter id="sv2#lpu4#oln38#par167" name="password_PASSING_Contrase&#241;a" sourceLinkParameter="sv2#seu17#oln35#par125" target="sv2#sfu1#str25"/>
+        <LinkParameter id="sv2#lpu4#oln38#par168" name="nombre_PASSING_Nombre" sourceLinkParameter="sv2#seu17#oln35#par124" target="sv2#sfu1#str16"/>
+        <LinkParameter id="sv2#lpu4#oln38#par169" name="userName_PASSING_Nombre de Usuario" sourceLinkParameter="sv2#seu17#oln35#par126" target="sv2#sfu1#str22"/>
+      </OKLink>
+    </LoopUnit>
+    <CreateUnit gr:x="955" gr:y="-435" id="sv2#cru7" name="Crear Datos M&#233;dico" entity="ent8">
+      <OKLink id="sv2#cru7#oln40" name="OKFlow40" to="sv2#seu17">
+        <LinkParameter id="sv2#cru7#oln40#par222" name="oid_PASSING" sourceLinkParameter="sv2#cru1#oln33#par139" passing="true"/>
+        <LinkParameter id="sv2#cru7#oln40#par29" name="email_PASSING" sourceLinkParameter="sv2#cru1#oln33#par28" passing="true"/>
+        <LinkParameter id="sv2#cru7#oln40#par110" name="apellidos_PASSING" sourceLinkParameter="sv2#cru1#oln33#par33" passing="true"/>
+        <LinkParameter id="sv2#cru7#oln40#par120" name="nombre_PASSING" sourceLinkParameter="sv2#cru1#oln33#par40" passing="true"/>
+        <LinkParameter id="sv2#cru7#oln40#par121" name="password_PASSING" sourceLinkParameter="sv2#cru1#oln33#par92" passing="true"/>
+        <LinkParameter id="sv2#cru7#oln40#par122" name="userName_PASSING" sourceLinkParameter="sv2#cru1#oln33#par109" passing="true"/>
+      </OKLink>
+    </CreateUnit>
+    <ModifyUnit gr:x="-445" gr:y="885" id="sv2#mfu8" name="Actualizar Datos M&#233;dico" entity="ent8">
+      <Selector id="sv2#mfu8#su42" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu8#su42#kcond26" name="KeyCondition26" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#mfu8#oln42" name="OKFlow42" to="sv2#mfu9">
+        <LinkParameter id="sv2#mfu8#oln42#par274" name="Apellidos_PASSING_apellidos" sourceLinkParameter="sv2#page16#enu10#ln68#par269" target="sv2#mfu9.User#att35"/>
+        <LinkParameter id="sv2#mfu8#oln42#par275" name="Correo Electr&#243;nico_PASSING_email" sourceLinkParameter="sv2#page16#enu10#ln68#par271" target="sv2#mfu9.email"/>
+        <LinkParameter id="sv2#mfu8#oln42#par276" name="Nombre_PASSING_nombre" sourceLinkParameter="sv2#page16#enu10#ln68#par272" target="sv2#mfu9.User#att34"/>
+        <LinkParameter id="sv2#mfu8#oln42#par277" name="Contrase&#241;a_PASSING_password" sourceLinkParameter="sv2#page16#enu10#ln68#par270" target="sv2#mfu9.password"/>
+        <LinkParameter id="sv2#mfu8#oln42#par278" name="Nombre de Usuario_PASSING_userName" sourceLinkParameter="sv2#page16#enu10#ln68#par273" target="sv2#mfu9.userName"/>
+        <LinkParameter id="sv2#mfu8#oln42#par27" name="oid_PASSING_KeyCondition5 [oid]" sourceLinkParameter="sv2#page16#enu10#ln68#par26" target="sv2#mfu9#su43#kcond27.userOID"/>
+      </OKLink>
+      <KOLink id="sv2#mfu8#kln18" name="KOFlow18" to="sv2#page9#mssu10">
+        <LinkParameter id="sv2#mfu8#kln18#par279" name="Error actualizando m&#233;dico_Shown Messages" sourceValue="Error actualizando m&#233;dico" target="sv2#page9#mssu10.shownMessages"/>
+      </KOLink>
+    </ModifyUnit>
+    <ModifyUnit id="sv2#mfu9" name="Actualizar Usuario" gr:x="-165" gr:y="960" entity="User">
+      <Selector id="sv2#mfu9#su43" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu9#su43#kcond27" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#mfu9#oln41" name="OKFlow39" to="sv2#page9#mssu10">
+        <LinkParameter id="sv2#mfu9#oln41#par254" name="Usuario actualizado correctamente_Shown Messages" target="sv2#page9#mssu10.shownMessages" sourceValue="Usuario actualizado correctamente"/>
+      </OKLink>
+      <KOLink id="sv2#mfu9#kln17" name="KOFlow16" to="sv2#page9#mssu10" gr:bendpoints="-18,-458,-13,437">
+        <LinkParameter id="sv2#mfu9#kln17#par255" name="Error actualizando usuario_Shown Messages" target="sv2#page9#mssu10.shownMessages" sourceValue="Error actualizando usuario"/>
+      </KOLink>
+    </ModifyUnit>
+    <MailUnit gr:x="635" gr:y="-315" id="sv2#mlu1" name="Enviar usuario" format="html" smtpServer="smtp1">
+      <OKLink id="sv2#mlu1#oln29" name="OKFlow29" to="sv2#page2#mssu1">
+        <LinkParameter id="sv2#mlu1#oln29#par140" name="Usuario creado correctamente_Shown Messages" sourceValue="Usuario creado correctamente" target="sv2#page2#mssu1.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#mlu1#kln1" name="KOFlow1" to="sv2#page2#mssu1" gr:bendpoints="-115,94,130,-71">
+        <LinkParameter id="sv2#mlu1#kln1#par141" name="Error creando usuario_Shown Messages" sourceValue="Error creando usuario" target="sv2#page2#mssu1.shownMessages"/>
+      </KOLink>
+    </MailUnit>
+    <StringsFunctionUnit gr:x="670" gr:y="-195" id="sv2#sfu1" name="Mensaje Correo" mode="concatStrings" substringType="byIndex" substringMode="afterSeparator" encryptAlgorithm="com.webratio.rtx.core.DES3UnicodeCryptImplementation">
+      <OKLink id="sv2#sfu1#oln1" name="OKFlow1" to="sv2#mlu1">
+        <LinkParameter id="sv2#sfu1#oln1#par136" name="Result String_Mail - Body" source="resultString" target="sv2#mlu1.body"/>
+        <LinkParameter id="sv2#sfu1#oln1#par137" name="Datos Usuario SES_Mail - Subject" sourceValue="Datos Usuario SES" target="sv2#mlu1.subject"/>
+        <LinkParameter id="sv2#sfu1#oln1#par170" name="email_PASSING_Mail - To" sourceLinkParameter="sv2#lpu4#oln38#par127" target="sv2#mlu1.to"/>
+      </OKLink>
+      <String id="sv2#sfu1#str15" name="Estimado" value="&lt;p&gt;Estimado "/>
+      <String id="sv2#sfu1#str16" name="Nombre"/>
+      <String id="sv2#sfu1#str17" name="Espacio" value=" "/>
+      <String id="sv2#sfu1#str18" name="Apellidos"/>
+      <String id="sv2#sfu1#str19" name="Coma + Salto Linea" value=",&lt;/p&gt;"/>
+      <String id="sv2#sfu1#str20" name="Informaci&#243;n" value="&lt;p&gt;Sus nuevas credenciales de acceso al sistema sanitario son:&lt;/p&gt;"/>
+      <String id="sv2#sfu1#str21" name="Etiqueta Nombre de Usuario" value="&lt;p&gt;- Nombre de usuario: "/>
+      <String id="sv2#sfu1#str22" name="Nombre de Usuario"/>
+      <String id="sv2#sfu1#str23" name="Salto de Linea 1" value="&lt;/p&gt;"/>
+      <String id="sv2#sfu1#str24" name="Etiqueta Contrase&#241;a" value="&lt;p&gt;- Contrase&#241;a: "/>
+      <String id="sv2#sfu1#str25" name="Contrase&#241;a"/>
+      <String id="sv2#sfu1#str26" name="Salto de Linea 2" value="&lt;/p&gt;"/>
+      <String id="sv2#sfu1#str27" name="Saludos" value="&lt;p&gt;Saludos, SES&lt;/p&gt;"/>
+    </StringsFunctionUnit>
+    <StringsFunctionUnit gr:x="735" gr:y="440" id="sv2#sfu4" name="Mensaje Correo" mode="concatStrings" substringType="byIndex" substringMode="afterSeparator" encryptAlgorithm="com.webratio.rtx.core.DES3UnicodeCryptImplementation">
+      <String id="sv2#sfu4#str28" name="Estimado" value="&lt;p&gt;Estimado "/>
+      <String id="sv2#sfu4#str29" name="Nombre"/>
+      <String id="sv2#sfu4#str30" name="Espacio" value=" "/>
+      <String id="sv2#sfu4#str31" name="Apellidos"/>
+      <String id="sv2#sfu4#str32" name="Dos puntos" value=":&lt;/p&gt;"/>
+      <String id="sv2#sfu4#str33" name="Informacion" value="&lt;p&gt;Sus nuevas credenciales de acceso al sistema del SES son las siguientes:&lt;/p&gt;"/>
+      <String id="sv2#sfu4#str34" name="Etiqueta Nombre de Usuario" value="&lt;p&gt;- Nombre de usuario: "/>
+      <String id="sv2#sfu4#str35" name="Nombre de usuario"/>
+      <String id="sv2#sfu4#str36" name="Salto de Linea 1" value="&lt;/p&gt;"/>
+      <String id="sv2#sfu4#str37" name="Etiqueta Contrase&#241;a" value="&lt;p&gt;- Contrase&#241;a: "/>
+      <String id="sv2#sfu4#str38" name="Contrase&#241;a"/>
+      <String id="sv2#sfu4#str39" name="Salto de Linea 2" value="&lt;/p&gt;"/>
+      <String id="sv2#sfu4#str40" name="Saludos" value="&lt;p&gt;Saludos, SES&lt;/p&gt;"/>
+      <OKLink id="sv2#sfu4#oln31" name="OKFlow31" to="sv2#mlu2">
+        <LinkParameter id="sv2#sfu4#oln31#par176" name="Result String_Mail - Body" source="resultString" target="sv2#mlu2.body"/>
+        <LinkParameter id="sv2#sfu4#oln31#par177" name="Datos Usuario SES_Mail - Subject" sourceValue="Datos Usuario SES" target="sv2#mlu2.subject"/>
+        <LinkParameter id="sv2#sfu4#oln31#par178" name="email_PASSING_Mail - To" sourceLinkParameter="sv2#cru3#oln6#par175" target="sv2#mlu2.to"/>
+      </OKLink>
+      <KOLink id="sv2#sfu4#kln20" name="KOFlow20" to="sv2#page10#mssu7">
+        <LinkParameter id="sv2#sfu4#kln20#par181" name="Error creando usuario_Shown Messages" sourceValue="Error creando usuario" target="sv2#page10#mssu7.shownMessages"/>
+      </KOLink>
+    </StringsFunctionUnit>
+    <MailUnit gr:x="885" gr:y="315" id="sv2#mlu2" name="Correo" format="html" smtpServer="smtp1">
+      <OKLink id="sv2#mlu2#oln32" name="OKFlow32" to="sv2#page10#mssu7">
+        <LinkParameter id="sv2#mlu2#oln32#par179" name="Usuario creado correctamente_Shown Messages" sourceValue="Usuario creado correctamente" target="sv2#page10#mssu7.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#mlu2#kln19" name="KOFlow19" to="sv2#page10#mssu7" gr:bendpoints="-52,-75,23,85">
+        <LinkParameter id="sv2#mlu2#kln19#par180" name="Error creando usuario_Shown Messages" sourceValue="Error creando usuario" target="sv2#page10#mssu7.shownMessages"/>
+      </KOLink>
+    </MailUnit>
   </OperationUnits>
 </SiteView>

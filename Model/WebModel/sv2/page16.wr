@@ -1,0 +1,106 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-455" gr:y="420" id="sv2#page16" name="Actualizar M&#233;dico">
+  <ContentUnits>
+    <SelectorUnit id="sv2#page16#seu19" name="UserOid" gr:x="90" gr:y="0" entity="User">
+      <Selector id="sv2#page16#seu19#su36" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page16#seu19#su36#kcond21" name="oid" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page16#seu19#ln51" name="Flow51" to="sv2#page16#seu23" type="transport" validate="true">
+        <LinkParameter id="sv2#page16#seu19#ln51#par228" name="oid_PASSING" source="userOIDArray" passing="true"/>
+        <LinkParameter id="sv2#page16#seu19#ln51#par235" name="apellidos_PASSING" source="User#att35Array" passing="true"/>
+        <LinkParameter id="sv2#page16#seu19#ln51#par236" name="email_PASSING" source="emailArray" passing="true"/>
+        <LinkParameter id="sv2#page16#seu19#ln51#par237" name="nombre_PASSING" source="User#att34Array" passing="true"/>
+        <LinkParameter id="sv2#page16#seu19#ln51#par238" name="password_PASSING" source="passwordArray" passing="true"/>
+        <LinkParameter id="sv2#page16#seu19#ln51#par239" name="userName_PASSING" source="userNameArray" passing="true"/>
+        <LinkParameter id="sv2#page16#seu19#ln51#par240" name="UserToStaffData.oid_KeyCondition25 [oid]" source="rel3#role5_ent8#att9Array" target="sv2#page16#seu23#su41#kcond25.ent8#att9"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv2#page16#enu10" name="Actualizar M&#233;dico" gr:x="205" gr:y="210" linkOrder="sv2#page16#enu10#ln68">
+      <Field id="sv2#page16#enu10#fld13" name="Nombre de Usuario" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page16#enu10#fld14" name="Contrase&#241;a" type="password" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page16#enu10#fld16" name="Correo Electr&#243;nico" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page16#enu10#fld32" name="Nombre" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv2#page16#enu10#fld33" name="Apellidos" type="string" modifiable="true" preloaded="true"/>
+      <SelectionField id="sv2#page16#enu10#sfld9" name="Departamento" type="string"/>
+      <SelectionField id="sv2#page16#enu10#sfld10" name="Centro Medico" type="string"/>
+      <Link id="sv2#page16#enu10#ln68" name="Actualizar" to="sv2#mfu8" type="normal" validate="true">
+        <LinkParameter id="sv2#page16#enu10#ln68#par268" name="Departamento_Department.oid(UserToDepartament)" source="sv2#page16#enu10#sfld9" target="sv2#mfu8.rel7#role13.ent3#att3"/>
+        <LinkParameter id="sv2#page16#enu10#ln68#par269" name="Apellidos_PASSING" source="sv2#page16#enu10#fld33" passing="true"/>
+        <LinkParameter id="sv2#page16#enu10#ln68#par270" name="Contrase&#241;a_PASSING" source="sv2#page16#enu10#fld14" passing="true"/>
+        <LinkParameter id="sv2#page16#enu10#ln68#par271" name="Correo Electr&#243;nico_PASSING" source="sv2#page16#enu10#fld16" passing="true"/>
+        <LinkParameter id="sv2#page16#enu10#ln68#par272" name="Nombre_PASSING" source="sv2#page16#enu10#fld32" passing="true"/>
+        <LinkParameter id="sv2#page16#enu10#ln68#par273" name="Nombre de Usuario_PASSING" source="sv2#page16#enu10#fld13" passing="true"/>
+        <LinkParameter id="sv2#page16#enu10#ln68#par281" name="oid_PASSING_KeyCondition26 [oid]" sourceLinkParameter="sv2#page16#seu23#ln64#par280" target="sv2#mfu8#su42#kcond26.ent8#att9"/>
+        <LinkParameter id="sv2#page16#enu10#ln68#par26" name="oid_PASSING" sourceLinkParameter="sv2#page16#seu23#ln64#par25" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="280" gr:y="30" id="sv2#page16#seu23" name="Datos M&#233;dico" entity="ent8">
+      <Link id="sv2#page16#seu23#ln64" name="Flow64" to="sv2#page16#enu10" type="transport" validate="true">
+        <LinkParameter id="sv2#page16#seu23#ln64#par241" name="apellidos_PASSING_Apellidos" sourceLinkParameter="sv2#page16#seu19#ln51#par235" target="sv2#page16#enu10#fld33_slot"/>
+        <LinkParameter id="sv2#page16#seu23#ln64#par242" name="password_PASSING_Contrase&#241;a" sourceLinkParameter="sv2#page16#seu19#ln51#par238" target="sv2#page16#enu10#fld14_slot"/>
+        <LinkParameter id="sv2#page16#seu23#ln64#par243" name="email_PASSING_Correo Electr&#243;nico" sourceLinkParameter="sv2#page16#seu19#ln51#par236" target="sv2#page16#enu10#fld16_slot"/>
+        <LinkParameter id="sv2#page16#seu23#ln64#par244" name="nombre_PASSING_Nombre" sourceLinkParameter="sv2#page16#seu19#ln51#par237" target="sv2#page16#enu10#fld32_slot"/>
+        <LinkParameter id="sv2#page16#seu23#ln64#par245" name="userName_PASSING_Nombre de Usuario" sourceLinkParameter="sv2#page16#seu19#ln51#par239" target="sv2#page16#enu10#fld13_slot"/>
+        <LinkParameter id="sv2#page16#seu23#ln64#par252" name="medicalCenterOid_Centro Medico - Preselection" source="ent8#att42Array" target="sv2#page16#enu10#sfld10_presel"/>
+        <LinkParameter id="sv2#page16#seu23#ln64#par253" name="departmentOid_Departamento - Preselection" source="ent8#att43Array" target="sv2#page16#enu10#sfld9_presel"/>
+        <LinkParameter id="sv2#page16#seu23#ln64#par280" name="oid_PASSING" source="ent8#att9Array" passing="true"/>
+        <LinkParameter id="sv2#page16#seu23#ln64#par25" name="oid_PASSING" sourceLinkParameter="sv2#page16#seu19#ln51#par228" passing="true"/>
+      </Link>
+      <Selector id="sv2#page16#seu23#su41" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page16#seu23#su41#kcond25" name="KeyCondition25" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="125" id="sv2#page16#seu24" name="Departamentos" entity="ent3">
+      <Link id="sv2#page16#seu24#ln65" name="Flow65" to="sv2#page16#enu10" type="transport" validate="true">
+        <LinkParameter id="sv2#page16#seu24#ln65#par248" name="departmentName_Departamento [label]" source="ent3#att1Array" target="sv2#page16#enu10#sfld9_label"/>
+        <LinkParameter id="sv2#page16#seu24#ln65#par249" name="oid_Departamento [output]" source="ent3#att3Array" target="sv2#page16#enu10#sfld9_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="250" id="sv2#page16#seu25" name="Centros M&#233;dicos" entity="ent4">
+      <Link id="sv2#page16#seu25#ln67" name="Flow67" to="sv2#page16#enu10" type="transport" validate="true">
+        <LinkParameter id="sv2#page16#seu25#ln67#par250" name="centerName_Centro Medico [label]" source="ent4#att2Array" target="sv2#page16#enu10#sfld10_label"/>
+        <LinkParameter id="sv2#page16#seu25#ln67#par251" name="oid_Centro Medico [output]" source="ent4#att4Array" target="sv2#page16#enu10#sfld10_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page16#enu10">
+          <layout:Field field="sv2#page16#enu10#fld13"/>
+          <layout:Field field="sv2#page16#enu10#fld14"/>
+          <layout:Field field="sv2#page16#enu10#fld16"/>
+          <layout:Field field="sv2#page16#enu10#fld32"/>
+          <layout:Field field="sv2#page16#enu10#fld33"/>
+          <layout:Field field="sv2#page16#enu10#sfld9"/>
+          <layout:Field field="sv2#page16#enu10#sfld10"/>
+          <layout:Link link="sv2#page16#enu10#ln68"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

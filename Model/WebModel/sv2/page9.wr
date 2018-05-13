@@ -1,30 +1,48 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-35" gr:y="-190" id="sv2#page9" name="Users" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-220" gr:y="-95" id="sv2#page9" name="Usuarios" landmark="true">
   <ContentUnits>
-    <PowerIndexUnit gr:x="0" gr:y="255" id="sv2#page9#pwu9" name="Staff" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName email User#att6" linkOrder="sv2#page9#pwu9#ln33 sv2#page9#pwu9#ln35">
+    <PowerIndexUnit gr:x="0" gr:y="115" id="sv2#page9#pwu9" name="M&#233;dicos" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName email User#att34 User#att35" linkOrder="sv2#page9#pwu9#ln33 sv2#page9#pwu9#ln40">
       <Selector id="sv2#page9#pwu9#su16" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv2#page9#pwu9#su16#acond7" name="groupOid" predicate="eq" booleanOperator="or" implied="false" attributes="User#att26" value="2"/>
       </Selector>
-      <Link id="sv2#page9#pwu9#ln33" name="Delete" to="sv2#dlu1" automaticCoupling="true" type="normal" validate="true"/>
-      <Link id="sv2#page9#pwu9#ln35" name="Modify" to="sv2#page5#seu3" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page9#pwu9#ln33" name="Eliminar" to="sv2#dlu1" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page9#pwu9#ln40" name="Actualizar" to="sv2#page16#seu19" type="normal" automaticCoupling="true" validate="true"/>
     </PowerIndexUnit>
-    <PowerIndexUnit gr:x="235" gr:y="220" id="sv2#page9#pwu10" name="Patient" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName email User#att6 User#att31" linkOrder="sv2#page9#pwu10#ln32 sv2#page9#pwu10#ln34">
+    <PowerIndexUnit gr:x="200" gr:y="170" id="sv2#page9#pwu10" name="Pacientes" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName email User#att31 User#att34 User#att35" linkOrder="sv2#page9#pwu10#ln32 sv2#page9#pwu10#ln35">
       <Selector id="sv2#page9#pwu10#su17" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv2#page9#pwu10#su17#acond8" name="groupOid" predicate="eq" booleanOperator="or" implied="false" value="3" attributes="User#att26"/>
       </Selector>
-      <Link id="sv2#page9#pwu10#ln32" name="Delete" to="sv2#dlu1" type="normal" automaticCoupling="true" validate="true"/>
-      <Link id="sv2#page9#pwu10#ln34" name="Modify" to="sv2#page5#seu3" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#page9#pwu10#ln32" name="Eliminar" to="sv2#dlu1" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#page9#pwu10#ln35" name="Actualizar" to="sv2#page15#seu18" type="normal" automaticCoupling="true" validate="true"/>
     </PowerIndexUnit>
-    <MultiMessageUnit id="sv2#page9#mssu10" name="UsersMessage" gr:x="265" gr:y="0"/>
+    <MultiMessageUnit id="sv2#page9#mssu10" name="Mensaje" gr:x="215" gr:y="0"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page9#pwu9">
+      <layout:Cell colspan="3"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#page9#mssu10"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="3"/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12" rowspan="2">
+        <layout:Unit unitId="sv2#page9#pwu10">
+          <layout:Link link="sv2#page9#pwu10#ln32"/>
+          <layout:Link link="sv2#page9#pwu10#ln35"/>
           <layout:Attribute attribute="userName"/>
           <layout:Attribute attribute="email"/>
-          <layout:Attribute attribute="User#att6"/>
-          <layout:Link link="sv2#page9#pwu9#ln33"/>
-          <layout:Link link="sv2#page9#pwu9#ln35"/>
+          <layout:Attribute attribute="User#att31"/>
+          <layout:Attribute attribute="User#att34"/>
+          <layout:Attribute attribute="User#att35"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -40,16 +58,44 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page9#pwu10">
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12" rowspan="2">
+        <layout:Unit unitId="sv2#page9#pwu9">
+          <layout:Link link="sv2#page9#pwu9#ln33"/>
+          <layout:Link link="sv2#page9#pwu9#ln40"/>
           <layout:Attribute attribute="userName"/>
           <layout:Attribute attribute="email"/>
-          <layout:Attribute attribute="User#att6"/>
-          <layout:Attribute attribute="User#att31"/>
-          <layout:Link link="sv2#page9#pwu10#ln32"/>
-          <layout:Link link="sv2#page9#pwu10#ln34"/>
+          <layout:Attribute attribute="User#att34"/>
+          <layout:Attribute attribute="User#att35"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

@@ -1,0 +1,35 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="70" gr:y="0" id="sv3#page18" name="Mis datos" linkVisibilityPolicy="inactive" landmark="true">
+  <ContentUnits>
+    <GetUnit id="sv3#page18#gtu6" name="GetUserOid" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv3#page18#gtu6#ln63" name="Flow63" to="sv3#page18#dau4" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <DataUnit gr:x="130" gr:y="120" id="sv3#page18#dau4" name="Mis datos" entity="User" displayAttributes="userName email User#att34 User#att35">
+      <Selector id="sv3#page18#dau4#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#page18#dau4#su40#kcond24" name="KeyCondition24" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page18#dau4">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att34"/>
+          <layout:Attribute attribute="User#att35"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
