@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="85" gr:y="105" id="sv1#page1" name="Home">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="65" gr:y="105" id="sv1#page1" name="Home">
   <ContentUnits>
-    <EntryUnit gr:x="0" gr:y="0" id="sv1#page1#enu1" name="Iniciar Sesi&#243;n" entity="User" linkOrder="sv1#page1#enu1#ln1">
+    <EntryUnit gr:x="20" gr:y="0" id="sv1#page1#enu1" name="Iniciar Sesi&#243;n" entity="User" linkOrder="sv1#page1#enu1#ln1">
       <Field id="sv1#page1#enu1#fld1" name="userName" type="string" modifiable="true" attribute="userName"/>
       <Field id="sv1#page1#enu1#fld2" name="password" type="password" modifiable="true" attribute="password"/>
       <Link id="sv1#page1#enu1#ln1" name="Login" to="sv1#lgu1" type="normal" validate="true">
@@ -8,7 +8,7 @@
         <LinkParameter id="sv1#page1#enu1#ln1#par2" name="password_Password" source="sv1#page1#enu1#fld2" target="sv1#lgu1.password"/>
       </Link>
     </EntryUnit>
-    <MultiMessageUnit gr:x="50" gr:y="105" id="sv1#page1#mssu2" name="Mensaje"/>
+    <MultiMessageUnit gr:x="70" gr:y="105" id="sv1#page1#mssu2" name="Mensaje"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -35,6 +35,20 @@
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv1#page1#mssu2"/>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

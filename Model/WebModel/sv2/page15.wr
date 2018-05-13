@@ -45,13 +45,13 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv2#page15#enu4">
+          <layout:Link link="sv2#page15#enu4#ln54"/>
           <layout:Field field="sv2#page15#enu4#fld10"/>
           <layout:Field field="sv2#page15#enu4#fld11"/>
           <layout:Field field="sv2#page15#enu4#fld12"/>
-          <layout:Field field="sv2#page15#enu4#sfld6"/>
           <layout:Field field="sv2#page15#enu4#fld34"/>
           <layout:Field field="sv2#page15#enu4#fld35"/>
-          <layout:Link link="sv2#page15#enu4#ln54"/>
+          <layout:Field field="sv2#page15#enu4#sfld6"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

@@ -17,5 +17,35 @@
         <LinkParameter id="sv3#mfu4#oln16#par105" name="Cita finalizada con &#233;xito_Shown Messages" sourceValue="Cita iniciada" target="sv3#page3#mssu3.shownMessages"/>
       </OKLink>
     </ModifyUnit>
+    <CreateUnit gr:x="1590" gr:y="955" id="sv3#cru8" name="Receta" entity="ent2">
+      <OKLink id="sv3#cru8#oln5" name="OKFlow5" to="sv3#page4#mssu5" gr:bendpoints="-96,-157,154,63">
+        <LinkParameter id="sv3#cru8#oln5#par59" name="A&#241;adida Receta_Shown Messages" sourceValue="A&#241;adida Receta" target="sv3#page4#mssu5.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv3#cru8#kln23" name="KOFlow23" to="sv3#page4#mssu5" gr:bendpoints="-178,-48,72,172">
+        <LinkParameter id="sv3#cru8#kln23#par70" name="Error a&#241;adiendo receta_Shown Messages" sourceValue="Error a&#241;adiendo receta" target="sv3#page4#mssu5.shownMessages"/>
+      </KOLink>
+    </CreateUnit>
+    <DeleteUnit gr:x="1525" gr:y="525" id="sv3#dlu5" name="Eliminar Receta" entity="ent2">
+      <Selector id="sv3#dlu5#su4" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu5#su4#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu5#oln30" name="OKFlow30" to="sv3#page4#mssu5">
+        <LinkParameter id="sv3#dlu5#oln30#par143" name="Receta Eliminada_Shown Messages" sourceValue="Receta Eliminada" target="sv3#page4#mssu5.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv3#dlu5#kln25" name="KOFlow25" to="sv3#page4#mssu5" gr:bendpoints="-103,120,102,-80">
+        <LinkParameter id="sv3#dlu5#kln25#par144" name="Error eliminando receta_Shown Messages" sourceValue="Error eliminando receta" target="sv3#page4#mssu5.shownMessages"/>
+      </KOLink>
+    </DeleteUnit>
+    <ModifyUnit gr:x="1220" gr:y="1320" id="sv3#mfu10" name="Actualizar Receta" entity="ent2">
+      <Selector id="sv3#mfu10#su38" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu10#su38#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu10#oln15" name="OKFlow15" to="sv3#page4#mssu5" gr:bendpoints="230,-209,140,386">
+        <LinkParameter id="sv3#mfu10#oln15#par138" name="Receta Actualizada_Shown Messages" sourceValue="Receta Actualizada" target="sv3#page4#mssu5.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv3#mfu10#kln24" name="KOFlow24" to="sv3#page4#mssu5" gr:bendpoints="314,-190,224,405">
+        <LinkParameter id="sv3#mfu10#kln24#par142" name="Error actualizando receta_Shown Messages" sourceValue="Error actualizando receta" target="sv3#page4#mssu5.shownMessages"/>
+      </KOLink>
+    </ModifyUnit>
   </OperationUnits>
 </SiteView>
