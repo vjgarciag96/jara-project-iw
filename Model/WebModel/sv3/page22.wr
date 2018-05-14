@@ -1,14 +1,17 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page22" name="Modificar Receta" gr:x="895" gr:y="1110">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page22" name="Modificar Receta" gr:x="590" gr:y="1095">
   <ContentUnits>
-    <EntryUnit id="sv3#page22#enu15" name="Modificar Receta" linkOrder="sv3#page22#enu15#ln45" gr:x="135" gr:y="5" entity="ent2">
+    <EntryUnit id="sv3#page22#enu15" name="Modificar Receta" linkOrder="sv3#page22#enu15#ln45" gr:x="355" gr:y="45" entity="ent2">
       <Field id="sv3#page22#enu15#fld42" name="Medicamento" type="string" modifiable="true" attribute="ent2#att44" preloaded="true"/>
       <Field id="sv3#page22#enu15#fld43" name="Cantidad" type="string" modifiable="true" attribute="ent2#att45" preloaded="true"/>
       <Field id="sv3#page22#enu15#fld44" name="Usos Diarios" type="integer" modifiable="true" attribute="ent2#att46" preloaded="true"/>
-      <Link id="sv3#page22#enu15#ln45" name="Actualizar" to="sv3#mfu10" type="normal" validate="true">
-        <LinkParameter id="sv3#page22#enu15#ln45#par157" name="Cantidad_Cantidad" source="sv3#page22#enu15#fld43" target="sv3#mfu10.ent2#att45"/>
-        <LinkParameter id="sv3#page22#enu15#ln45#par158" name="Key [oid]_KeyCondition22 [oid]" source="key.ent2#att33" target="sv3#mfu10#su38#kcond22.ent2#att33"/>
-        <LinkParameter id="sv3#page22#enu15#ln45#par159" name="Medicamento_Medicamento" source="sv3#page22#enu15#fld42" target="sv3#mfu10.ent2#att44"/>
-        <LinkParameter id="sv3#page22#enu15#ln45#par160" name="Usos Diarios_Usos Diarios" source="sv3#page22#enu15#fld44" target="sv3#mfu10.ent2#att46"/>
+      <Link id="sv3#page22#enu15#ln45" name="Actualizar" to="sv3#sfu3" type="normal" validate="true">
+        <LinkParameter id="sv3#page22#enu15#ln45#par246" name="Cantidad_PASSING" source="sv3#page22#enu15#fld43" passing="true"/>
+        <LinkParameter id="sv3#page22#enu15#ln45#par291" name="Medicamento_PASSING" source="sv3#page22#enu15#fld42" passing="true"/>
+        <LinkParameter id="sv3#page22#enu15#ln45#par292" name="Usos Diarios_PASSING" source="sv3#page22#enu15#fld44" passing="true"/>
+        <LinkParameter id="sv3#page22#enu15#ln45#par182" name="Cantidad_cantidad" source="sv3#page22#enu15#fld43" target="sv3#sfu3#str54"/>
+        <LinkParameter id="sv3#page22#enu15#ln45#par189" name="Medicamento_medicamento" source="sv3#page22#enu15#fld42" target="sv3#sfu3#str51"/>
+        <LinkParameter id="sv3#page22#enu15#ln45#par191" name="Usos Diarios_veces" source="sv3#page22#enu15#fld44" target="sv3#sfu3#str13"/>
+        <LinkParameter id="sv3#page22#enu15#ln45#par306" name="oid_PASSING" sourceLinkParameter="sv3#page22#seu14#ln52#par298" passing="true"/>
       </Link>
     </EntryUnit>
     <SelectorUnit id="sv3#page22#seu14" name="Receta" gr:x="0" gr:y="0" entity="ent2">
@@ -19,6 +22,7 @@
         <LinkParameter id="sv3#page22#seu14#ln52#par161" name="Cantidad_Cantidad" source="ent2#att45Array" target="sv3#page22#enu15#fld43_slot"/>
         <LinkParameter id="sv3#page22#seu14#ln52#par163" name="Medicamento_Medicamento" source="ent2#att44Array" target="sv3#page22#enu15#fld42_slot"/>
         <LinkParameter id="sv3#page22#seu14#ln52#par164" name="Usos Diarios_Usos Diarios" source="ent2#att46Array" target="sv3#page22#enu15#fld44_slot"/>
+        <LinkParameter id="sv3#page22#seu14#ln52#par298" name="oid_PASSING" source="ent2#att33Array" passing="true"/>
       </Link>
     </SelectorUnit>
   </ContentUnits>

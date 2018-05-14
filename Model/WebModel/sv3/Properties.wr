@@ -5,11 +5,14 @@
       <Selector id="sv3#mfu1#su22" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu1#su22#kcond12" name="KeyCondition12" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="sv3#mfu1#oln13" name="OKFlow13" to="sv3#page3#mssu3">
-        <LinkParameter id="sv3#mfu1#oln13#par102" name="Actualizado Diagn&#243;stico_Shown Messages" sourceValue="Actualizado Diagnostico" target="sv3#page3#mssu3.shownMessages"/>
+      <OKLink id="sv3#mfu1#oln13" name="OKFlow13" to="sv3#page4#mssu5" gr:bendpoints="-235,-53,170,-3">
+        <LinkParameter id="sv3#mfu1#oln13#par299" name="Actualizado Diagn&#243;stico_Shown Messages" sourceValue="Actualizado Diagn&#243;stico" target="sv3#page4#mssu5.shownMessages"/>
       </OKLink>
+      <KOLink id="sv3#mfu1#kln26" name="KOFlow26" to="sv3#page4#mssu5" gr:bendpoints="-236,-77,169,-27">
+        <LinkParameter id="sv3#mfu1#kln26#par300" name="Error actualizando diagn&#243;stico_Shown Messages" sourceValue="Error actualizando diagn&#243;stico" target="sv3#page4#mssu5.shownMessages"/>
+      </KOLink>
     </ModifyUnit>
-    <ModifyUnit gr:x="565" gr:y="910" id="sv3#mfu4" name="Archivar Cita" entity="ent5">
+    <ModifyUnit gr:x="430" gr:y="950" id="sv3#mfu4" name="Archivar Cita" entity="ent5">
       <Selector id="sv3#mfu4#su26" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu4#su26#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
       </Selector>
@@ -17,7 +20,7 @@
         <LinkParameter id="sv3#mfu4#oln16#par105" name="Cita finalizada con &#233;xito_Shown Messages" sourceValue="Cita iniciada" target="sv3#page3#mssu3.shownMessages"/>
       </OKLink>
     </ModifyUnit>
-    <CreateUnit gr:x="1590" gr:y="955" id="sv3#cru8" name="Receta" entity="ent2">
+    <CreateUnit gr:x="1760" gr:y="960" id="sv3#cru8" name="Receta" entity="ent2">
       <OKLink id="sv3#cru8#oln5" name="OKFlow5" to="sv3#page4#mssu5" gr:bendpoints="-96,-157,154,63">
         <LinkParameter id="sv3#cru8#oln5#par59" name="A&#241;adida Receta_Shown Messages" sourceValue="A&#241;adida Receta" target="sv3#page4#mssu5.shownMessages"/>
       </OKLink>
@@ -25,7 +28,7 @@
         <LinkParameter id="sv3#cru8#kln23#par70" name="Error a&#241;adiendo receta_Shown Messages" sourceValue="Error a&#241;adiendo receta" target="sv3#page4#mssu5.shownMessages"/>
       </KOLink>
     </CreateUnit>
-    <DeleteUnit gr:x="1525" gr:y="525" id="sv3#dlu5" name="Eliminar Receta" entity="ent2">
+    <DeleteUnit gr:x="1560" gr:y="510" id="sv3#dlu5" name="Eliminar Receta" entity="ent2">
       <Selector id="sv3#dlu5#su4" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#dlu5#su4#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>
@@ -36,7 +39,7 @@
         <LinkParameter id="sv3#dlu5#kln25#par144" name="Error eliminando receta_Shown Messages" sourceValue="Error eliminando receta" target="sv3#page4#mssu5.shownMessages"/>
       </KOLink>
     </DeleteUnit>
-    <ModifyUnit gr:x="1220" gr:y="1320" id="sv3#mfu10" name="Actualizar Receta" entity="ent2">
+    <ModifyUnit gr:x="1270" gr:y="1335" id="sv3#mfu10" name="Actualizar Receta" entity="ent2">
       <Selector id="sv3#mfu10#su38" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu10#su38#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
       </Selector>
@@ -47,5 +50,68 @@
         <LinkParameter id="sv3#mfu10#kln24#par142" name="Error actualizando receta_Shown Messages" sourceValue="Error actualizando receta" target="sv3#page4#mssu5.shownMessages"/>
       </KOLink>
     </ModifyUnit>
+    <TimeUnit gr:x="1780" gr:y="1335" id="sv3#tmu1" name="Hora Receta">
+      <OKLink id="sv3#tmu1#oln34" name="OKFlow34" to="sv3#cru8">
+        <LinkParameter id="sv3#tmu1#oln34#par190" name="Current/Input Timestamp_Fecha" source="currentTimestamp" target="sv3#cru8.ent2#att54"/>
+        <LinkParameter id="sv3#tmu1#oln34#par317" name="Cantidad_PASSING_Cantidad" sourceLinkParameter="sv3#sfu2#oln48#par312" target="sv3#cru8.ent2#att45"/>
+        <LinkParameter id="sv3#tmu1#oln34#par318" name="Medicamento_PASSING_Medicamento" sourceLinkParameter="sv3#sfu2#oln48#par313" target="sv3#cru8.ent2#att44"/>
+        <LinkParameter id="sv3#tmu1#oln34#par319" name="Usos Diarios_PASSING_Usos Diarios" sourceLinkParameter="sv3#sfu2#oln48#par316" target="sv3#cru8.ent2#att46"/>
+        <LinkParameter id="sv3#tmu1#oln34#par58" name="Result String_PASSING_url" sourceLinkParameter="sv3#sfu2#oln48#par315" target="sv3#cru8.ent2#att57"/>
+        <LinkParameter id="sv3#tmu1#oln34#par297" name="oid_PASSING_Schedule.oid(RecetaToSchedule)" sourceLinkParameter="sv3#sfu2#oln48#par296" target="sv3#cru8.rel4#role7.ent5#att5"/>
+      </OKLink>
+    </TimeUnit>
+    <TimeUnit id="sv3#tmu2" name="Hora Receta" gr:x="990" gr:y="1375">
+      <OKLink id="sv3#tmu2#oln43" name="OKFlow34" to="sv3#mfu10">
+        <LinkParameter id="sv3#tmu2#oln43#par295" name="Current/Input Timestamp_Fecha" source="currentTimestamp" target="sv3#mfu10.ent2#att54"/>
+        <LinkParameter id="sv3#tmu2#oln43#par229" name="Cantidad_PASSING_Cantidad" sourceLinkParameter="sv3#sfu3#oln54#par192" target="sv3#mfu10.ent2#att45"/>
+        <LinkParameter id="sv3#tmu2#oln43#par232" name="Medicamento_PASSING_Medicamento" sourceLinkParameter="sv3#sfu3#oln54#par203" target="sv3#mfu10.ent2#att44"/>
+        <LinkParameter id="sv3#tmu2#oln43#par233" name="Result String_PASSING_url" sourceLinkParameter="sv3#sfu3#oln54#par104" target="sv3#mfu10.ent2#att57"/>
+        <LinkParameter id="sv3#tmu2#oln43#par294" name="Usos Diarios_PASSING_Usos Diarios" sourceLinkParameter="sv3#sfu3#oln54#par216" target="sv3#mfu10.ent2#att46"/>
+        <LinkParameter id="sv3#tmu2#oln43#par308" name="oid_PASSING_KeyCondition22 [oid]" sourceLinkParameter="sv3#sfu3#oln54#par307" target="sv3#mfu10#su38#kcond22.ent2#att33"/>
+      </OKLink>
+    </TimeUnit>
+    <TimeUnit gr:x="445" gr:y="815" id="sv3#tmu3" name="Fin Cita">
+      <OKLink id="sv3#tmu3#oln45" name="OKFlow45" to="sv3#mfu4">
+        <LinkParameter id="sv3#tmu3#oln45#par303" name="oid_PASSING_KeyCondition16 [oid]" sourceLinkParameter="sv3#page3#pwu1#ln7#par302" target="sv3#mfu4#su26#kcond16.ent5#att5"/>
+        <LinkParameter id="sv3#tmu3#oln45#par304" name="1_ScheduleState.oid(ScheduleToScheduleState)" sourceValue="1" target="sv3#mfu4.rel6#role11.ent9#att14"/>
+        <LinkParameter id="sv3#tmu3#oln45#par305" name="Current/Input Timestamp_Terminada" source="currentTimestamp" target="sv3#mfu4.ent5#att56"/>
+      </OKLink>
+    </TimeUnit>
+    <StringsFunctionUnit gr:x="1580" gr:y="1335" id="sv3#sfu2" name="URLReceta" mode="concatStrings" substringType="byIndex" substringMode="afterSeparator" encryptAlgorithm="com.webratio.rtx.core.DES3UnicodeCryptImplementation">
+      <OKLink id="sv3#sfu2#oln48" name="OKFlow48" to="sv3#tmu1">
+        <LinkParameter id="sv3#sfu2#oln48#par312" name="Cantidad_PASSING" sourceLinkParameter="sv3#page4#enu12#ln12#par153" passing="true"/>
+        <LinkParameter id="sv3#sfu2#oln48#par313" name="Medicamento_PASSING" sourceLinkParameter="sv3#page4#enu12#ln12#par154" passing="true"/>
+        <LinkParameter id="sv3#sfu2#oln48#par315" name="Result String_PASSING" source="resultString" passing="true"/>
+        <LinkParameter id="sv3#sfu2#oln48#par316" name="Usos Diarios_PASSING" sourceLinkParameter="sv3#page4#enu12#ln12#par156" passing="true"/>
+        <LinkParameter id="sv3#sfu2#oln48#par296" name="oid_PASSING" sourceLinkParameter="sv3#page4#enu12#ln12#par155" passing="true"/>
+      </OKLink>
+      <String id="sv3#sfu2#str1" name="BaseURL" value="http://qss.unex.es:2073?"/>
+      <String id="sv3#sfu2#str2" name="QueryParam1" value="veces="/>
+      <String id="sv3#sfu2#str3" name="veces"/>
+      <String id="sv3#sfu2#str4" name="Ampersand1" value="&amp;"/>
+      <String id="sv3#sfu2#str5" name="QueryParam2" value="medicamento="/>
+      <String id="sv3#sfu2#str7" name="medicamento"/>
+      <String id="sv3#sfu2#str8" name="Ampersand2" value="&amp;"/>
+      <String id="sv3#sfu2#str9" name="QueryParam3" value="cantidad="/>
+      <String id="sv3#sfu2#str10" name="cantidad"/>
+    </StringsFunctionUnit>
+    <StringsFunctionUnit id="sv3#sfu3" name="URLReceta" gr:x="525" gr:y="1380" mode="concatStrings" substringType="byIndex" substringMode="afterSeparator" encryptAlgorithm="com.webratio.rtx.core.DES3UnicodeCryptImplementation">
+      <OKLink id="sv3#sfu3#oln54" name="OKFlow48" to="sv3#tmu2">
+        <LinkParameter id="sv3#sfu3#oln54#par104" name="Result String_PASSING" source="resultString" passing="true"/>
+        <LinkParameter id="sv3#sfu3#oln54#par192" name="Cantidad_PASSING" sourceLinkParameter="sv3#page22#enu15#ln45#par246" passing="true"/>
+        <LinkParameter id="sv3#sfu3#oln54#par203" name="Medicamento_PASSING" sourceLinkParameter="sv3#page22#enu15#ln45#par291" passing="true"/>
+        <LinkParameter id="sv3#sfu3#oln54#par216" name="Usos Diarios_PASSING" sourceLinkParameter="sv3#page22#enu15#ln45#par292" passing="true"/>
+        <LinkParameter id="sv3#sfu3#oln54#par307" name="oid_PASSING" sourceLinkParameter="sv3#page22#enu15#ln45#par306" passing="true"/>
+      </OKLink>
+      <String id="sv3#sfu3#str11" name="BaseURL" value="http://qss.unex.es:2073?"/>
+      <String id="sv3#sfu3#str12" name="QueryParam1" value="veces="/>
+      <String id="sv3#sfu3#str13" name="veces"/>
+      <String id="sv3#sfu3#str14" name="Ampersand1" value="&amp;"/>
+      <String id="sv3#sfu3#str50" name="QueryParam2" value="medicamento="/>
+      <String id="sv3#sfu3#str51" name="medicamento"/>
+      <String id="sv3#sfu3#str52" name="Ampersand2" value="&amp;"/>
+      <String id="sv3#sfu3#str53" name="QueryParam3" value="cantidad="/>
+      <String id="sv3#sfu3#str54" name="cantidad"/>
+    </StringsFunctionUnit>
   </OperationUnits>
 </SiteView>

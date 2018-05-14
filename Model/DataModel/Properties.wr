@@ -1,5 +1,5 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="-120" gr:y="75" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att6 User#att26 User#att31 User#att32 User#att34 User#att35" db:database="db1" db:table="user">
+  <Entity id="User" name="User" duration="persistent" gr:x="-205" gr:y="70" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att6 User#att26 User#att31 User#att32 User#att34 User#att35" db:database="db1" db:table="user">
     <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="Nombre de Usuario" id="userName" type="string" db:column="username"/>
     <Attribute name="Contrase&#241;a" id="password" type="password" db:column="password"/>
@@ -11,11 +11,11 @@
     <Attribute id="User#att34" name="Nombre" type="string" db:column="nombre"/>
     <Attribute id="User#att35" name="Apellidos" type="string" db:column="apellidos"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="255" gr:y="40" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
+  <Entity id="Group" name="Group" duration="persistent" gr:x="190" gr:y="5" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
     <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="545" gr:y="40" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
+  <Entity id="Module" name="Module" duration="persistent" gr:x="545" gr:y="180" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
     <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
     <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
@@ -52,23 +52,23 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="435" gr:y="575" id="ent3" name="Department" duration="persistent" attributeOrder="ent3#att3 ent3#att1 ent3#att30 ent3#att38" db:database="db1" db:table="department">
+  <Entity gr:x="780" gr:y="715" id="ent3" name="Department" duration="persistent" attributeOrder="ent3#att3 ent3#att1 ent3#att30 ent3#att38" db:database="db1" db:table="department">
     <Attribute id="ent3#att3" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent3#att1" name="departmentName" type="string" db:column="departmentname"/>
     <Attribute id="ent3#att30" name="medicalCenter" type="string" derivationQuery="simpleImported::Self.rel8#role16.ent4#att2"/>
     <Attribute id="ent3#att38" name="medicalCenterOid" type="integer" derivationQuery="simpleImported::Self.rel8#role16.ent4#att4"/>
   </Entity>
-  <Entity gr:x="495" gr:y="775" id="ent4" name="MedicCenter" duration="persistent" attributeOrder="ent4#att4 ent4#att2" db:database="db1" db:table="mediccenter">
+  <Entity gr:x="490" gr:y="865" id="ent4" name="MedicCenter" duration="persistent" attributeOrder="ent4#att4 ent4#att2" db:database="db1" db:table="mediccenter">
     <Attribute id="ent4#att4" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent4#att2" name="centerName" type="string" db:column="centername"/>
   </Entity>
-  <Entity gr:x="-55" gr:y="565" id="ent5" name="Schedule" duration="persistent" attributeOrder="ent5#att5 ent5#att12 ent5#att25 ent5#att17 ent5#att18 ent5#att21 ent5#att19 ent5#att20 ent5#att13 ent5#att11 ent5#att37 ent5#att39 ent5#att40" db:database="db1" db:table="schedule">
+  <Entity gr:x="-30" gr:y="590" id="ent5" name="Schedule" duration="persistent" attributeOrder="ent5#att5 ent5#att12 ent5#att25 ent5#att17 ent5#att18 ent5#att21 ent5#att19 ent5#att20 ent5#att13 ent5#att11 ent5#att37 ent5#att39 ent5#att40 ent5#att56" db:database="db1" db:table="schedule">
     <Attribute id="ent5#att5" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent5#att12" name="Descripci&#243;n" type="text" db:column="description"/>
     <Attribute id="ent5#att17" name="Estado" type="string" derivationQuery="simpleImported::Self.rel6#role11.ent9#att16"/>
     <Attribute id="ent5#att18" name="Detalle Estado" type="text" derivationQuery="simpleImported::Self.rel6#role11.ent9#att15"/>
     <Attribute id="ent5#att19" name="patientName" type="string" derivationQuery="simpleImported::Self.rel5#role9.userName"/>
-    <Attribute id="ent5#att20" name="M&#233;dico" type="string" derivationQuery="simpleImported::Self.rel10#role20.userName"/>
+    <Attribute id="ent5#att20" name="M&#233;dico" type="string" derivationQuery="simpleImported::Self.rel10#role20.User#att34"/>
     <Attribute id="ent5#att21" name="patientOid" type="integer" derivationQuery="simpleImported::Self.rel5#role9.userOID"/>
     <Attribute id="ent5#att13" name="staffOid" type="integer" derivationQuery="simpleImported::Self.rel10#role20.userOID"/>
     <Attribute id="ent5#att11" name="Fecha" type="string" derivationQuery="simpleImported::Self.rel11#role21.ent10#att36"/>
@@ -76,8 +76,9 @@
     <Attribute id="ent5#att39" name="Diagn&#243;stico" type="text" db:column="details"/>
     <Attribute id="ent5#att40" name="dayhourOid" type="integer" derivationQuery="simpleImported::Self.rel11#role21.ent10#att49"/>
     <Attribute id="ent5#att25" name="stateOid" type="integer" derivationQuery="simpleImported::Self.rel6#role11.ent9#att14"/>
+    <Attribute id="ent5#att56" name="Terminada" type="timestamp" db:column="terminada"/>
   </Entity>
-  <Entity gr:x="-215" gr:y="390" id="ent7" name="PatientData" duration="persistent" attributeOrder="ent7#att7 ent7#att8" db:database="db1" db:table="patientdata">
+  <Entity gr:x="-385" gr:y="475" id="ent7" name="PatientData" duration="persistent" attributeOrder="ent7#att7 ent7#att8" db:database="db1" db:table="patientdata">
     <Attribute id="ent7#att7" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent7#att8" name="cip" type="string" db:column="cip"/>
   </Entity>
@@ -97,13 +98,13 @@
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="240" gr:y="285" id="ent8" name="StaffData" duration="persistent" attributeOrder="ent8#att9 ent8#att10 ent8#att27 ent8#att28 ent8#att29 ent8#att41 ent8#att42 ent8#att43" db:database="db1" db:table="staffdata">
+  <Entity gr:x="190" gr:y="315" id="ent8" name="StaffData" duration="persistent" attributeOrder="ent8#att9 ent8#att10 ent8#att27 ent8#att28 ent8#att29 ent8#att41 ent8#att42 ent8#att43" db:database="db1" db:table="staffdata">
     <Attribute id="ent8#att9" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent8#att10" name="staffId" type="string" db:column="staffid"/>
     <Attribute id="ent8#att27" name="userOid" type="integer" derivationQuery="simpleImported::Self.rel3#role6.userOID"/>
     <Attribute id="ent8#att28" name="userName" type="string" derivationQuery="simpleImported::Self.rel3#role6.userName"/>
-    <Attribute id="ent8#att29" name="departament" type="string" derivationQuery="simpleImported::Self.rel7#role13.ent3#att1"/>
-    <Attribute id="ent8#att41" name="medicalCenter" type="string" derivationQuery="simpleImported::Self.rel7#role13.ent3#att30"/>
+    <Attribute id="ent8#att29" name="Departamento" type="string" derivationQuery="simpleImported::Self.rel7#role13.ent3#att1"/>
+    <Attribute id="ent8#att41" name="Centro M&#233;dico" type="string" derivationQuery="simpleImported::Self.rel7#role13.ent3#att30"/>
     <Attribute id="ent8#att42" name="medicalCenterOid" type="integer" derivationQuery="simpleImported::Self.rel7#role13.ent3#att38"/>
     <Attribute id="ent8#att43" name="departmentOid" type="integer" derivationQuery="simpleImported::Self.rel7#role13.ent3#att3"/>
   </Entity>
@@ -123,7 +124,7 @@
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="115" gr:y="1010" id="ent9" name="ScheduleState" duration="persistent" attributeOrder="ent9#att14 ent9#att16 ent9#att15" db:database="db1" db:table="schedulestate">
+  <Entity gr:x="200" gr:y="1015" id="ent9" name="ScheduleState" duration="persistent" attributeOrder="ent9#att14 ent9#att16 ent9#att15" db:database="db1" db:table="schedulestate">
     <Attribute id="ent9#att14" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent9#att15" name="description" type="text" db:column="description"/>
     <Attribute id="ent9#att16" name="stateName" type="string" db:column="statename"/>
@@ -152,8 +153,7 @@
       <db:JoinColumn attribute="ent3#att3" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="aquiles-db" type="PostgreSQL 9" url="jdbc:postgresql://localhost:32768/Aquiles" username="postgres" schema="public">
-  </db:Database>
+  <db:Database id="db1" name="aquiles-db" type="PostgreSQL 9" url="jdbc:postgresql://localhost:32768/Aquiles" username="postgres" schema="public"/>
   <Relationship id="rel10" name="Staff_Schedule" sourceEntity="User" targetEntity="ent5" gr:bendpoints="58,185,108,-165" db:database="db1" db:table="schedule">
     <RelationshipRole1 id="rel10#role19" name="ScheduleStaff" maxCard="N" cascadeDelete="false">
       <db:JoinColumn attribute="userOID" name="user_oid_2"/>
@@ -162,7 +162,7 @@
       <db:JoinColumn attribute="ent5#att5" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="545" gr:y="185" id="ent10" name="TimeTableItem" duration="persistent" attributeOrder="ent10#att49 ent10#att50 ent10#att51 ent10#att52 ent10#att53 ent10#att36" db:database="db1" db:table="timetableitem">
+  <Entity gr:x="785" gr:y="405" id="ent10" name="TimeTableItem" duration="persistent" attributeOrder="ent10#att49 ent10#att50 ent10#att51 ent10#att52 ent10#att53 ent10#att36" db:database="db1" db:table="timetableitem">
     <Attribute id="ent10#att49" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent10#att50" name="starttime" type="string" db:column="starttime"/>
     <Attribute id="ent10#att51" name="scheduled" type="boolean" db:column="scheduled"/>
@@ -186,16 +186,21 @@
       <db:JoinColumn attribute="ent10#att49" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="855" gr:y="205" id="ent1" name="TimeTableBase" duration="persistent" attributeOrder="ent1#att22 ent1#att23 ent1#att24" db:database="db1" db:table="timetablebase">
+  <Entity gr:x="870" gr:y="145" id="ent1" name="TimeTableBase" duration="persistent" attributeOrder="ent1#att22 ent1#att23 ent1#att24" db:database="db1" db:table="timetablebase">
     <Attribute id="ent1#att22" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent1#att23" name="starttime" type="string" db:column="starttime"/>
     <Attribute id="ent1#att24" name="day" type="string" db:column="day"/>
   </Entity>
-  <Entity gr:x="-375" gr:y="790" id="ent2" name="Receta" duration="persistent" attributeOrder="ent2#att33 ent2#att44 ent2#att45 ent2#att46" db:database="db1" db:table="receta">
+  <Entity gr:x="-375" gr:y="790" id="ent2" name="Receta" duration="persistent" attributeOrder="ent2#att33 ent2#att44 ent2#att45 ent2#att46 ent2#att47 ent2#att48 ent2#att54 ent2#att55 ent2#att57" db:database="db1" db:table="receta">
     <Attribute id="ent2#att33" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent2#att44" name="Medicamento" type="string" db:column="medicamento"/>
     <Attribute id="ent2#att45" name="Cantidad" type="string" db:column="cantidad"/>
     <Attribute id="ent2#att46" name="Usos Diarios" type="integer" db:column="usos_diarios"/>
+    <Attribute id="ent2#att47" name="patientOid" type="integer" derivationQuery="simpleImported::Self.rel4#role7.ent5#att21"/>
+    <Attribute id="ent2#att48" name="Recetada Por" type="string" derivationQuery="simpleImported::Self.rel4#role7.ent5#att20"/>
+    <Attribute id="ent2#att54" name="Fecha" type="timestamp" db:column="fecha"/>
+    <Attribute id="ent2#att55" name="scheduleOid" type="integer" derivationQuery="simpleImported::Self.rel4#role7.ent5#att5"/>
+    <Attribute id="ent2#att57" name="url" type="string" db:column="url"/>
   </Entity>
   <Relationship id="rel4" name="Receta_Schedule" sourceEntity="ent2" targetEntity="ent5" db:database="db1" db:table="receta">
     <RelationshipRole1 id="rel4#role7" name="RecetaToSchedule" maxCard="1">

@@ -1,0 +1,71 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-450" gr:y="815" id="sv4#page5" name="Mis Recetas" landmark="true">
+  <ContentUnits>
+    <GetUnit id="sv4#page5#gtu7" name="GetUserOid" gr:x="80" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv4#page5#gtu7#ln5" name="Flow18" to="sv4#page5#pwu8" type="transport" validate="true">
+        <LinkParameter id="sv4#page5#gtu7#ln5#par134" name="UserCtxParam.oid_AttCondition24" source="sv4#page5#gtu7.UserCtxParam" target="sv4#page5#pwu8#su45#acond24"/>
+      </Link>
+    </GetUnit>
+    <PowerIndexUnit gr:x="0" gr:y="150" id="sv4#page5#pwu8" name="Recetas" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att44 ent2#att54" linkOrder="sv4#page5#pwu8#ln9">
+      <Selector id="sv4#page5#pwu8#su45" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#page5#pwu8#su45#acond24" name="patientOid" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att47"/>
+      </Selector>
+      <Link id="sv4#page5#pwu8#ln9" name="Ver Detalle" to="sv4#page5#qrcu1" type="normal" validate="true">
+        <LinkParameter id="sv4#page5#pwu8#ln9#par102" name="256_QRCode Image Size" sourceValue="256" target="sv4#page5#qrcu1.size"/>
+        <LinkParameter id="sv4#page5#pwu8#ln9#par103" name="url_QRCode Text" source="data[].ent2#att57" target="sv4#page5#qrcu1.text"/>
+      </Link>
+    </PowerIndexUnit>
+    <QRCodeUnit gr:x="40" gr:y="300" id="sv4#page5#qrcu1" name="QR Receta" size="256"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page5#pwu8">
+          <layout:Link link="sv4#page5#pwu8#ln9"/>
+          <layout:Attribute attribute="ent2#att44"/>
+          <layout:Attribute attribute="ent2#att54"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page5#qrcu1"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
