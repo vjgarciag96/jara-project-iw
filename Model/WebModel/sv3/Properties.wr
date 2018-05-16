@@ -12,12 +12,13 @@
         <LinkParameter id="sv3#mfu1#kln26#par300" name="Error actualizando diagn&#243;stico_Shown Messages" sourceValue="Error actualizando diagn&#243;stico" target="sv3#page4#mssu5.shownMessages"/>
       </KOLink>
     </ModifyUnit>
-    <ModifyUnit gr:x="430" gr:y="950" id="sv3#mfu4" name="Archivar Cita" entity="ent5">
+    <ModifyUnit gr:x="505" gr:y="985" id="sv3#mfu4" name="Archivar Cita" entity="ent5">
       <Selector id="sv3#mfu4#su26" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu4#su26#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="sv3#mfu4#oln16" name="OKFlow16" to="sv3#page3#mssu3" gr:bendpoints="209,-172,-51,383">
-        <LinkParameter id="sv3#mfu4#oln16#par105" name="Cita finalizada con &#233;xito_Shown Messages" sourceValue="Cita iniciada" target="sv3#page3#mssu3.shownMessages"/>
+      <OKLink id="sv3#mfu4#oln16" name="OKFlow16" to="sv3#seu27" gr:bendpoints="-218,75,-23,-90">
+        <LinkParameter id="sv3#mfu4#oln16#par332" name="oid_PASSING" source="ent5#att5Array" passing="true"/>
+        <LinkParameter id="sv3#mfu4#oln16#par334" name="oid_KeyCondition34 [oid]" source="ent5#att5Array" target="sv3#seu27#su55#kcond34.ent5#att5"/>
       </OKLink>
     </ModifyUnit>
     <CreateUnit gr:x="1760" gr:y="960" id="sv3#cru8" name="Receta" entity="ent2">
@@ -39,7 +40,7 @@
         <LinkParameter id="sv3#dlu5#kln25#par144" name="Error eliminando receta_Shown Messages" sourceValue="Error eliminando receta" target="sv3#page4#mssu5.shownMessages"/>
       </KOLink>
     </DeleteUnit>
-    <ModifyUnit gr:x="1270" gr:y="1335" id="sv3#mfu10" name="Actualizar Receta" entity="ent2">
+    <ModifyUnit gr:x="1275" gr:y="1400" id="sv3#mfu10" name="Actualizar Receta" entity="ent2">
       <Selector id="sv3#mfu10#su38" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu10#su38#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
       </Selector>
@@ -60,7 +61,7 @@
         <LinkParameter id="sv3#tmu1#oln34#par297" name="oid_PASSING_Schedule.oid(RecetaToSchedule)" sourceLinkParameter="sv3#sfu2#oln48#par296" target="sv3#cru8.rel4#role7.ent5#att5"/>
       </OKLink>
     </TimeUnit>
-    <TimeUnit id="sv3#tmu2" name="Hora Receta" gr:x="990" gr:y="1375">
+    <TimeUnit id="sv3#tmu2" name="Hora Receta" gr:x="1000" gr:y="1450">
       <OKLink id="sv3#tmu2#oln43" name="OKFlow34" to="sv3#mfu10">
         <LinkParameter id="sv3#tmu2#oln43#par295" name="Current/Input Timestamp_Fecha" source="currentTimestamp" target="sv3#mfu10.ent2#att54"/>
         <LinkParameter id="sv3#tmu2#oln43#par229" name="Cantidad_PASSING_Cantidad" sourceLinkParameter="sv3#sfu3#oln54#par192" target="sv3#mfu10.ent2#att45"/>
@@ -70,11 +71,12 @@
         <LinkParameter id="sv3#tmu2#oln43#par308" name="oid_PASSING_KeyCondition22 [oid]" sourceLinkParameter="sv3#sfu3#oln54#par307" target="sv3#mfu10#su38#kcond22.ent2#att33"/>
       </OKLink>
     </TimeUnit>
-    <TimeUnit gr:x="445" gr:y="815" id="sv3#tmu3" name="Fin Cita">
+    <TimeUnit gr:x="400" gr:y="860" id="sv3#tmu3" name="Fin Cita">
       <OKLink id="sv3#tmu3#oln45" name="OKFlow45" to="sv3#mfu4">
         <LinkParameter id="sv3#tmu3#oln45#par303" name="oid_PASSING_KeyCondition16 [oid]" sourceLinkParameter="sv3#page3#pwu1#ln7#par302" target="sv3#mfu4#su26#kcond16.ent5#att5"/>
         <LinkParameter id="sv3#tmu3#oln45#par304" name="1_ScheduleState.oid(ScheduleToScheduleState)" sourceValue="1" target="sv3#mfu4.rel6#role11.ent9#att14"/>
         <LinkParameter id="sv3#tmu3#oln45#par305" name="Current/Input Timestamp_Terminada" source="currentTimestamp" target="sv3#mfu4.ent5#att56"/>
+        <LinkParameter id="sv3#tmu3#oln45#par314" name="oid_PASSING" sourceLinkParameter="sv3#page3#pwu1#ln7#par302" passing="true"/>
       </OKLink>
     </TimeUnit>
     <StringsFunctionUnit gr:x="1580" gr:y="1335" id="sv3#sfu2" name="URLReceta" mode="concatStrings" substringType="byIndex" substringMode="afterSeparator" encryptAlgorithm="com.webratio.rtx.core.DES3UnicodeCryptImplementation">
@@ -113,5 +115,59 @@
       <String id="sv3#sfu3#str53" name="QueryParam3" value="cantidad="/>
       <String id="sv3#sfu3#str54" name="cantidad"/>
     </StringsFunctionUnit>
+    <MailUnit gr:x="270" gr:y="1490" id="sv3#mlu5" name="Enviar Recetas" format="plainText" smtpServer="smtp1">
+      <OKLink id="sv3#mlu5#oln62" name="OKFlow62" to="sv3#lpu3" automaticCoupling="true" gr:bendpoints="-142,92,178,52"/>
+    </MailUnit>
+    <SelectorUnit gr:x="-10" gr:y="1285" id="sv3#seu3" name="Recetas" entity="ent2">
+      <Selector id="sv3#seu3#su53" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#seu3#su53#acond30" name="AttCondition30" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att47"/>
+        <AttributesCondition id="sv3#seu3#su53#acond32" name="AttCondition32" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att55"/>
+      </Selector>
+      <OKLink id="sv3#seu3#oln56" name="OKFlow56" to="sv3#lpu3">
+        <LinkParameter id="sv3#seu3#oln56#par321" name="url_Input Array" source="ent2#att57Array" target="sv3#lpu3.array"/>
+        <LinkParameter id="sv3#seu3#oln56#par349" name="Email_PASSING" sourceLinkParameter="sv3#mlu6#oln61#par348" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <LoopUnit gr:x="-50" gr:y="1530" id="sv3#lpu3" name="Bucle Recetas">
+      <OKLink id="sv3#lpu3#oln57" name="OKFlow57" to="sv3#mlu5" code="next" gr:bendpoints="-73,68,-123,-52">
+        <LinkParameter id="sv3#lpu3#oln57#par322" name="Receta SES_Mail - Subject" sourceValue="Receta SES" target="sv3#mlu5.subject"/>
+        <LinkParameter id="sv3#lpu3#oln57#par350" name="Next Element_Mail - Body" source="next" target="sv3#mlu5.body"/>
+        <LinkParameter id="sv3#lpu3#oln57#par351" name="Email_PASSING_Mail - To" sourceLinkParameter="sv3#seu3#oln56#par349" target="sv3#mlu5.to"/>
+      </OKLink>
+      <OKLink id="sv3#lpu3#oln63" name="OKFlow63" to="sv3#page3#mssu3" gr:bendpoints="-118,-182,-913,538;-85,-398,-880,322" code="end">
+        <LinkParameter id="sv3#lpu3#oln63#par352" name="Cita terminada correctamente_Shown Messages" sourceValue="Cita terminada correctamente" target="sv3#page3#mssu3.shownMessages"/>
+      </OKLink>
+    </LoopUnit>
+    <SelectorUnit gr:x="495" gr:y="1120" id="sv3#seu27" name="Cita" entity="ent5">
+      <Selector id="sv3#seu27#su55" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#seu27#su55#kcond34" name="KeyCondition34" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#seu27#oln59" name="OKFlow59" to="sv3#seu28">
+        <LinkParameter id="sv3#seu27#oln59#par336" name="Diagn&#243;stico_PASSING" source="ent5#att39Array" passing="true"/>
+        <LinkParameter id="sv3#seu27#oln59#par335" name="patientOid_KeyCondition35 [oid]" source="ent5#att21Array" target="sv3#seu28#su56#kcond35.userOID"/>
+        <LinkParameter id="sv3#seu27#oln59#par343" name="oid_PASSING" source="ent5#att5Array" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="215" gr:y="1130" id="sv3#seu28" name="Paciente" entity="User">
+      <Selector id="sv3#seu28#su56" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#seu28#su56#kcond35" name="KeyCondition35" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#seu28#oln60" name="OKFlow60" to="sv3#mlu6">
+        <LinkParameter id="sv3#seu28#oln60#par338" name="Diagn&#243;stico_PASSING" sourceLinkParameter="sv3#seu27#oln59#par336" passing="true"/>
+        <LinkParameter id="sv3#seu28#oln60#par339" name="Diagn&#243;stico_PASSING_Mail - Body" sourceLinkParameter="sv3#seu27#oln59#par336" target="sv3#mlu6.body"/>
+        <LinkParameter id="sv3#seu28#oln60#par340" name="Diagn&#243;stico Cita_Mail - Subject" sourceValue="Diagn&#243;stico Cita" target="sv3#mlu6.subject"/>
+        <LinkParameter id="sv3#seu28#oln60#par341" name="Email_Mail - To" source="emailArray" target="sv3#mlu6.to"/>
+        <LinkParameter id="sv3#seu28#oln60#par342" name="oid_PASSING" source="userOIDArray" passing="true"/>
+        <LinkParameter id="sv3#seu28#oln60#par344" name="oid_PASSING" sourceLinkParameter="sv3#seu27#oln59#par343" passing="true"/>
+        <LinkParameter id="sv3#seu28#oln60#par347" name="Email_PASSING" source="emailArray" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <MailUnit gr:x="280" gr:y="1310" id="sv3#mlu6" name="Enviar Diagn&#243;stico" format="plainText" smtpServer="smtp1">
+      <OKLink id="sv3#mlu6#oln61" name="OKFlow61" to="sv3#seu3">
+        <LinkParameter id="sv3#mlu6#oln61#par345" name="oid_PASSING_AttCondition30" sourceLinkParameter="sv3#seu28#oln60#par342" target="sv3#seu3#su53#acond30"/>
+        <LinkParameter id="sv3#mlu6#oln61#par346" name="oid_PASSING_AttCondition32" sourceLinkParameter="sv3#seu28#oln60#par344" target="sv3#seu3#su53#acond32"/>
+        <LinkParameter id="sv3#mlu6#oln61#par348" name="Email_PASSING" sourceLinkParameter="sv3#seu28#oln60#par347" passing="true"/>
+      </OKLink>
+    </MailUnit>
   </OperationUnits>
 </SiteView>

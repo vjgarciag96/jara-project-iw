@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page22" name="Modificar Receta" gr:x="590" gr:y="1095">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page22" name="Modificar Receta" gr:x="850" gr:y="1220">
   <ContentUnits>
     <EntryUnit id="sv3#page22#enu15" name="Modificar Receta" linkOrder="sv3#page22#enu15#ln45" gr:x="355" gr:y="45" entity="ent2">
       <Field id="sv3#page22#enu15#fld42" name="Medicamento" type="string" modifiable="true" attribute="ent2#att44" preloaded="true"/>

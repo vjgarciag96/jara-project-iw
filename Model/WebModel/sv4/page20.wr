@@ -1,0 +1,53 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-165" gr:y="1060" id="sv4#page20" name="Detalle Receta">
+  <ContentUnits>
+    <QRCodeUnit id="sv4#page20#qrcu3" name="QR Receta" gr:x="115" gr:y="155" size="256"/>
+    <DataUnit id="sv4#page20#dau7" name="Detalle Receta" gr:x="0" gr:y="0" entity="ent2" displayAttributes="ent2#att44 ent2#att45 ent2#att46 ent2#att48 ent2#att54">
+      <Selector id="sv4#page20#dau7#su52" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page20#dau7#su52#kcond32" name="KeyCondition29" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#page20#dau7#ln60" name="Flow34" to="sv4#page20#qrcu3" type="transport" validate="true">
+        <LinkParameter id="sv4#page20#dau7#ln60#par310" name="url_QRCode Text" source="data.ent2#att57" target="sv4#page20#qrcu3.text"/>
+      </Link>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page20#qrcu3" layout:unitLayout="StoreTemplates/Default"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page20#dau7">
+          <layout:Attribute attribute="ent2#att44"/>
+          <layout:Attribute attribute="ent2#att45"/>
+          <layout:Attribute attribute="ent2#att46"/>
+          <layout:Attribute attribute="ent2#att48"/>
+          <layout:Attribute attribute="ent2#att54"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

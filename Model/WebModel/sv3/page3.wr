@@ -26,7 +26,7 @@
         <LinkParameter id="sv3#page3#gtu3#ln16#par14" name="UserCtxParam.oid_staffOid" source="sv3#page3#gtu3.UserCtxParam" target="sv3#page3#seu1#su2#acond5"/>
       </Link>
     </GetUnit>
-    <MultiMessageUnit gr:x="495" gr:y="30" id="sv3#page3#mssu3" name="Citas"/>
+    <MultiMessageUnit gr:x="350" gr:y="515" id="sv3#page3#mssu3" name="Citas"/>
     <PowerIndexUnit id="sv3#page3#pwu3" name="Citas En Desarrollo" linkOrder="sv3#page3#pwu3#ln20 sv3#page3#pwu3#ln31" gr:x="240" gr:y="370" sortable="true" checkable="false" useCountQuery="false" entity="ent5" displayAttributes="ent5#att11 ent5#att19 ent5#att12 ent5#att17">
       <Selector id="sv3#page3#pwu3#su20" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv3#page3#pwu3#su20#acond18" name="staffOid" predicate="eq" booleanOperator="or" implied="false" attributes="ent5#att13"/>
